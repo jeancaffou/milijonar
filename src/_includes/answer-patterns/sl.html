@@ -1,0 +1,236 @@
+<header class="app-header">
+    <div>
+      <p class="eyebrow">ANALIZA KATALOGA</p>
+      <h1>Milijonar: vzorci pravilnih odgovorov</h1>
+      <p id="source-summary" class="source-summary"></p>
+    </div>
+    <div class="rule-badge" aria-label="Sklep analize">
+      <span>Sklep analize</span>
+      <strong>Ni potrjenega napovednega pravila</strong>
+      <small id="best-rule-score"></small>
+    </div>
+  </header>
+
+    <section class="summary-strip" aria-label="Povzetek analize">
+      <div><span>Vprašanja</span><strong id="summary-questions"></strong></div>
+      <div><span>Epizode</span><strong id="summary-episodes"></strong></div>
+      <div><span>Vprašanja Q2+ v testni množici</span><strong id="summary-holdout"></strong></div>
+      <div><span>Preverjene nastavitve</span><strong id="summary-search"></strong></div>
+      <div><span>Najboljši model za Q2+</span><strong id="summary-best"></strong></div>
+    </section>
+
+    <section class="findings-summary" aria-labelledby="top-verdict">
+      <p class="section-kicker">POVZETEK UGOTOVITEV</p>
+      <h2 id="top-verdict">V testnih sezonah ni bilo potrjeno uporabno pravilo zaporedja</h2>
+      <p id="top-summary" class="lead-finding"></p>
+      <p class="chart-explanation">Pretekle črke po prvem vprašanju ne omogočajo dovolj zanesljive napovedi naslednjega odgovora. Črka B je v novejših sezonah nekoliko pogostejša, vendar ta razlika ni dovolj za uporabno napoved. Boljši rezultat je mogoč pri ponovitvi istega ali zelo podobnega vprašanja, kadar se znani pravilni odgovor znova pojavi med možnostmi.</p>
+      <div class="finding-grid">
+        <div><span>Začetne predpone in vzorci</span><strong id="finding-prefix"></strong><p id="finding-prefix-note"></p></div>
+        <div><span>Rezultat dolgih ciklov</span><strong id="finding-cycle"></strong><p id="finding-cycle-note"></p></div>
+        <div><span>Kaj dejansko pomaga</span><strong id="finding-content"></strong><p id="finding-content-note"></p></div>
+      </div>
+      <p class="method-note" id="search-scope"></p>
+    </section>
+
+    <section class="chart-section sequence-grid-section">
+      <div class="section-heading compact">
+        <div>
+          <p class="section-kicker">CELOTNO KRONOLOŠKO ZAPOREDJE</p>
+          <h2>Celotno zaporedje odgovorov A/B/C/D, vključno s Q1</h2>
+        </div>
+      </div>
+      <p class="chart-explanation">Zaporedje se bere od leve proti desni in nadaljuje v naslednji vrstici. Vsaka celica predstavlja en pravilni odgovor iz dejanskega zaporedja igre, vključno s Q1; ponovljena predvajanja so odstranjena. Nastavitev števila stolpcev isto zaporedje razporedi v različno dolge vrstice.</p>
+      <div id="chronological-sequence-chart" class="sequence-html-grid" aria-label="Prilagodljiva kronološka mreža odgovorov A B C D"></div>
+      <p id="chronological-sequence-meta" class="method-note"></p>
+    </section>
+
+    <section class="chart-section sequence-search-section">
+      <div class="section-heading compact">
+        <div>
+          <p class="section-kicker">PREIZKUS PRAVIL ZAPOREDJA</p>
+          <h2>Razlika v točnosti na S08 in S09–S10</h2>
+        </div>
+      </div>
+      <p class="chart-explanation">Vsaka točka je ena vnaprej določena družina pravil. Uporabno pravilo mora biti nad ničlo na navpični osi S09-S10. Točke, ki so dobre samo na vodoravni osi S08, so se prilagodile preteklim podatkom in ne napovedujejo prihodnosti.</p>
+      <div id="sequence-family-scatter" class="chart chart-large compact-scatter-text" aria-label="Razlika v točnosti na razvojni in testni množici"></div>
+    </section>
+
+    <section class="two-column sequence-detail-grid">
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">DODATNI PREIZKUSI</p><h2>Primerjava dodatnih modelov na S08 in S09–S10</h2></div></div>
+        <p class="chart-explanation">Tu so dodatni modeli dolge zgodovine, prilagodljivega konteksta, ravnotežja in algebraičnih pravil. Uporabno pravilo mora na S09-S10 končati nad vodoravno ničelno črto.</p>
+        <div id="advanced-sequence-scatter" class="chart" aria-label="Napredna pravila zaporedja na S08 in testni množici"></div>
+      </article>
+      <article class="chart-section stress-results">
+        <div class="section-heading compact"><div><p class="section-kicker">PREIZKUSI NAKLJUČNOSTI</p><h2>Stiskanje in ravnotežje znotraj igre</h2></div></div>
+        <p class="chart-explanation">Boljše stiskanje ali nenavadno uravnotežene igre bi nakazovale strukturo, tudi če je posamezni model ne zazna. Oboje je primerjano z naključno premešanimi različicami podatkov, ki ohranijo mesto vprašanja.</p>
+        <dl>
+          <div><dt>Stisnjeni bajti zlib</dt><dd id="compression-zlib"></dd></div>
+          <div><dt>Število fraz LZ78</dt><dd id="compression-lz"></dd></div>
+          <div><dt>Pari enakih črk znotraj igre</dt><dd id="run-balance"></dd></div>
+          <div><dt>Preverjene nastavitve</dt><dd id="advanced-search-count"></dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <section class="two-column sequence-detail-grid">
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">DALJŠI MOTIVI</p><h2>Opažene ponovitve proti ponovitvam po premešanju</h2></div></div>
+        <p class="chart-explanation">Neprekinjeni nizi treh do osmih odgovorov so primerjani s premešanji, ki ohranijo sezono in mesto znotraj igre. Točka na diagonali pomeni, da ni presežka ponavljanja.</p>
+        <div id="motif-scatter" class="chart" aria-label="Opažene in premešane ponovitve motivov"></div>
+      </article>
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">KRONOLOŠKA ODVISNOST</p><h2>Učinek kronološkega zamika pri Q2+</h2></div></div>
+        <p class="chart-explanation">Navpična os kaže opaženi delež enake črke minus pričakovanje po premešanju znotraj sezon in mest vprašanj. Posamezen vrh mora prestati popravek FDR čez vseh 512 zamikov.</p>
+        <div id="chronological-lag-scatter" class="chart" aria-label="Ostanek deleža pri kronoloških zamikih"></div>
+      </article>
+    </section>
+
+    <section class="two-column sequence-detail-grid">
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">ZAMIKI ZNOTRAJ IGRE</p><h2>Delež enake črke pri zamikih z dovolj podatki</h2></div></div>
+        <p class="chart-explanation">Nadaljevanja iste igre so povezana, Q1 in ponovljena predvajanja pa so odstranjena. Preverjeni so zamiki do 20; graf prikazuje zamike z najmanj 30 primerjavami.</p>
+        <div id="long-lag-chart" class="chart" aria-label="Daljši zamiki znotraj tekmovalčeve igre"></div>
+      </article>
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">ISKANJE PERIOD</p><h2>Najmočnejši kategorični spektralni vrhovi</h2></div></div>
+        <p class="chart-explanation">Prikazana je moč najizrazitejših možnih period med 2 in 1.000 vprašanji. Rezultat se primerja z največjim vrhom vsake naključno premešane različice podatkov.</p>
+        <div id="spectrum-scatter" class="chart" aria-label="Vrhovi kategoričnega periodograma"></div>
+      </article>
+    </section>
+
+    <section class="chart-section overview-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">SKUPNA PORAZDELITEV</p>
+          <h2>Pravilne črke niso enakomerno porazdeljene</h2>
+        </div>
+        <div id="distribution-filter" class="segmented" role="group" aria-label="Podmnožica porazdelitve"></div>
+      </div>
+      <div class="chart-and-note">
+        <div id="distribution-chart" class="chart chart-large" aria-label="Porazdelitev pravilnih odgovorov"></div>
+        <aside class="stat-note">
+          <span>Preizkus enakomernosti</span>
+          <strong id="uniformity-p"></strong>
+          <p id="uniformity-note"></p>
+        </aside>
+      </div>
+      <p class="chart-explanation">To je samo skupni delež vsake črke, ne pravilo zaporedja. Filtri odstranijo Q1, da znano pravilo Q1 = D ne prevlada nad rezultatom.</p>
+    </section>
+
+    <section class="two-column">
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">SPREMEMBA FORMATA</p>
+            <h2>Q1 po sezonah</h2>
+          </div>
+        </div>
+        <div id="q1-season-chart" class="chart" aria-label="Deleži odgovorov Q1 po sezonah"></div>
+        <p class="chart-explanation">Graf prikazuje znano spremembo prvega vprašanja, ki je izključena iz glavne analize zaporedij.</p>
+      </article>
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">NOVEJŠE SEZONE, Q2+</p>
+            <h2>Več B/C in manj D</h2>
+          </div>
+        </div>
+        <div id="modern-q2-chart" class="chart" aria-label="Porazdelitev od Q2 naprej v Godlerjevi dobi"></div>
+        <p class="chart-explanation">Ta trajna, vendar majhna neuravnoteženost daje šibko osnovno pravilo B, ki ga mora vsak model zaporedja preseči.</p>
+      </article>
+    </section>
+
+    <section class="chart-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">MESTO VPRAŠANJA</p>
+          <h2>Delež črk na vsakem mestu lestvice</h2>
+        </div>
+        <div id="position-filter" class="segmented" role="group" aria-label="Obdobje za mesta vprašanj"></div>
+      </div>
+      <div id="position-heatmap" class="chart chart-heatmap" aria-label="Toplotna karta številke vprašanja in odgovora"></div>
+      <p class="chart-explanation">Celice kažejo delež črke na vsakem mestu lestvice. Po Q1 so učinki mesta majhni in nestabilni v primerjavi s splošno večjim deležem B/C.</p>
+    </section>
+
+    <section class="chart-section">
+      <div class="section-heading compact">
+        <div>
+          <p class="section-kicker">SPREMEMBE MED SEZONAMI</p>
+          <h2>Porazdelitev odgovorov po sezonah</h2>
+        </div>
+      </div>
+      <div id="season-chart" class="chart chart-large" aria-label="Porazdelitev odgovorov po sezonah"></div>
+      <p class="chart-explanation">Sezona je uporabljena za opis sprememb in razdelitev podatkov na razvojno ter testno množico, ne pa kot podatek za napoved odgovora.</p>
+    </section>
+
+    <section class="two-column sequence-grid">
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">ZAPOREDJE</p>
+            <h2>Prejšnja črka proti naslednji</h2>
+          </div>
+        </div>
+        <div id="transition-heatmap" class="chart" aria-label="Matrika prehodov med odgovori"></div>
+        <p class="chart-explanation">Vrstice predstavljajo prejšnji odgovor, stolpci pa naslednjega. Razlike so statistično zaznavne, vendar premajhne za napoved prihodnjih sezon.</p>
+      </article>
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">ZAPOREDNA ODVISNOST</p>
+            <h2>Delež enake črke po zamiku</h2>
+          </div>
+        </div>
+        <div id="lag-chart" class="chart" aria-label="Delež enake črke po zamiku"></div>
+        <p class="chart-explanation">Ta pogled kratkih zamikov je ohranjen za primerjavo; zgornji razdelek dolgih zamikov vsebuje popravljen test do zamika 20.</p>
+      </article>
+    </section>
+
+    <section class="chart-section model-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">LOČENA TESTNA MNOŽICA</p>
+          <h2>Uspešnost modelov na S09–S10</h2>
+        </div>
+        <div id="model-filter" class="segmented" role="group" aria-label="Merilo modela"></div>
+      </div>
+      <div id="model-chart" class="chart chart-models" aria-label="Primerjava točnosti modelov"></div>
+      <div class="baseline-key"><span></span> Enakomerno naključno ugibanje: 25 %</div>
+      <p class="chart-explanation">Vsi prikazani rezultati so iz ločene testne množice S09–S10. Modeli uporabljajo obliko vprašanja, značilnosti posameznih možnosti, besedilo, zgodovino zaporedja in podobnost s prejšnjimi vprašanji.</p>
+    </section>
+
+    <section class="two-column final-grid">
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">POVEZAVE</p>
+            <h2>Velikost učinka po značilkah</h2>
+          </div>
+        </div>
+        <div id="association-chart" class="chart" aria-label="Cramerjev V po značilkah"></div>
+        <p class="chart-explanation">Povezava je opisna in jo lahko zameglijo spremembe formata. Pomembna je velikost učinka, ne majhna vrednost p, ki jo zlahka povzroči velik katalog.</p>
+      </article>
+      <article class="chart-section verdict-panel">
+        <p class="section-kicker">SKLEP</p>
+        <h2>Ponovljena vprašanja pomagajo, vzorci črk ne</h2>
+        <dl>
+          <div><dt>Sodobni Q1</dt><dd>D v <strong id="verdict-q1"></strong></dd></div>
+          <div><dt>Sodobni Q2+</dt><dd>B v <strong id="verdict-b"></strong>, D v <strong id="verdict-d"></strong></dd></div>
+          <div><dt>Ponovitev sosednje črke</dt><dd><strong id="verdict-repeat"></strong> proti referenci 25 %</dd></div>
+          <div><dt>Najboljši rezultat na testni množici</dt><dd><strong id="verdict-best"></strong></dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <section class="findings-narrative" aria-labelledby="findings-heading">
+      <p class="section-kicker">RAZLAGA</p>
+      <h2 id="findings-heading">Ugotovitve in omejitve</h2>
+      <div class="narrative-columns">
+        <div><h3>Kaj je bilo preverjeno</h3><p id="html-tested"></p></div>
+        <div><h3>Kaj se ni potrdilo v testnih sezonah</h3><p id="html-failed"></p></div>
+        <div><h3>Kaj ostaja uporabno</h3><p id="html-useful"></p></div>
+        <div><h3>Česa analiza ne trdi</h3><p id="html-limits"></p></div>
+      </div>
+    </section>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>

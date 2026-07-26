@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "method", "topics", "editorial_notes"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "method": { "type": "string" },
+    "topics": {
+      "type": "array",
+      "minItems": 80,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "broad_id", "broad_sl", "broad_en", "label_sl", "label_en", "description_sl", "description_en", "inclusion", "exclusion", "study_focus_sl", "study_focus_en", "example_indices"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "broad_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "broad_sl": { "type": "string", "minLength": 2 },
+          "broad_en": { "type": "string", "minLength": 2 },
+          "label_sl": { "type": "string", "minLength": 3 },
+          "label_en": { "type": "string", "minLength": 3 },
+          "description_sl": { "type": "string", "minLength": 12 },
+          "description_en": { "type": "string", "minLength": 12 },
+          "inclusion": { "type": "string", "minLength": 12 },
+          "exclusion": { "type": "string", "minLength": 8 },
+          "study_focus_sl": { "type": "string", "minLength": 8 },
+          "study_focus_en": { "type": "string", "minLength": 8 },
+          "example_indices": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0 },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "editorial_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

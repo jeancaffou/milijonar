@@ -1,0 +1,22 @@
+{
+  "name": "milijonar-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "node scripts/clean-output.mjs",
+    "build": "npx --yes @11ty/eleventy@3.1.6",
+    "prebuild:portable": "node scripts/clean-output.mjs",
+    "build:portable": "CATALOG_PORTABLE_EVIDENCE=1 npx --yes @11ty/eleventy@3.1.6",
+    "prebuild:pages": "node scripts/clean-output.mjs",
+    "build:pages": "CATALOG_BASE_PATH=/milijonar CATALOG_PORTABLE_EVIDENCE=1 npx --yes @11ty/eleventy@3.1.6",
+    "check:pages": "CATALOG_BASE_PATH=/milijonar CATALOG_PORTABLE_EVIDENCE=1 node scripts/check-build.mjs",
+    "serve": "node scripts/serve-static.mjs",
+    "dev": "CHOKIDAR_USEPOLLING=1 CHOKIDAR_INTERVAL=750 npx --yes @11ty/eleventy@3.1.6 --serve",
+    "check": "node scripts/check-build.mjs",
+    "test": "npm run build && npm run check"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6"
+  }
+}

@@ -1,0 +1,80 @@
+.site-footer {
+  --footer-content: var(--content, 90rem);
+  --footer-gutter: var(--gutter, clamp(1rem, 3.2vw, 3.25rem));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 2.5rem;
+  padding: 2.1rem max(var(--footer-gutter), calc((100vw - var(--footer-content)) / 2 + var(--footer-gutter)));
+  border-top: 1px solid var(--line);
+  background: var(--bg-deep, var(--deep, #070a1b));
+  color: var(--muted);
+  font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.footer-statement {
+  display: grid;
+  grid-template-columns: 1.15rem minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: start;
+  max-width: 54rem;
+}
+
+.footer-statement__copy p {
+  margin: 0;
+}
+
+.footer-diamond {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 0.3rem;
+  transform: rotate(45deg);
+  border: 1px solid var(--gold);
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem 1.3rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration-color: color-mix(in oklch, currentColor 45%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+.site-footer .footer-author {
+  color: var(--gold-bright);
+  font-weight: 700;
+}
+
+.site-footer a:hover {
+  color: var(--gold-bright);
+  text-decoration-color: currentColor;
+}
+
+.site-footer a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (max-width: 54rem) {
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .site-footer nav {
+    justify-content: flex-start;
+  }
+}
+
+@media print {
+  .site-footer {
+    display: none !important;
+  }
+}

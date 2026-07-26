@@ -1,0 +1,235 @@
+<header class="app-header">
+    <div>
+      <p class="eyebrow">CATALOGUE ANALYSIS</p>
+      <h1>Milijonar correct-answer patterns</h1>
+      <p id="source-summary" class="source-summary"></p>
+    </div>
+    <div class="rule-badge" aria-label="Future-season sequence verdict">
+      <span>Future-season verdict</span>
+      <strong>No reusable answer-letter sequence</strong>
+      <small id="best-rule-score"></small>
+    </div>
+  </header>
+
+    <section class="summary-strip" aria-label="Analysis summary">
+      <div><span>Questions</span><strong id="summary-questions"></strong></div>
+      <div><span>Episodes</span><strong id="summary-episodes"></strong></div>
+      <div><span>Q2+ holdout</span><strong id="summary-holdout"></strong></div>
+      <div><span>Sequence settings</span><strong id="summary-search"></strong></div>
+      <div><span>Best Q2+ predictor</span><strong id="summary-best"></strong></div>
+    </section>
+
+    <section class="findings-summary" aria-labelledby="top-verdict">
+      <p class="section-kicker">SUMMARY OF FINDINGS</p>
+      <h2 id="top-verdict">No hidden answer-order rule survived future seasons</h2>
+      <p id="top-summary" class="lead-finding"></p>
+      <div class="finding-grid">
+        <div><span>Prefix/template result</span><strong id="finding-prefix"></strong><p id="finding-prefix-note"></p></div>
+        <div><span>Long-cycle result</span><strong id="finding-cycle"></strong><p id="finding-cycle-note"></p></div>
+        <div><span>What does work</span><strong id="finding-content"></strong><p id="finding-content-note"></p></div>
+      </div>
+      <p class="method-note" id="search-scope"></p>
+    </section>
+
+    <section class="chart-section sequence-grid-section">
+      <div class="section-heading compact">
+        <div>
+          <p class="section-kicker">LITERAL CHRONOLOGY</p>
+          <h2>The complete A/B/C/D answer stream, including Q1</h2>
+        </div>
+      </div>
+      <p class="chart-explanation">Read left to right, then continue on the next row. Each HTML cell is one effective-ladder answer, including Q1, after repeated broadcasts are removed. Changing the grid width rewraps the same chronology while preserving season-start outlines.</p>
+      <div id="chronological-sequence-chart" class="sequence-html-grid" aria-label="Resizable chronological A B C D answer sequence grid"></div>
+      <p id="chronological-sequence-meta" class="method-note"></p>
+    </section>
+
+    <section class="chart-section sequence-search-section">
+      <div class="section-heading compact">
+        <div>
+          <p class="section-kicker">HIDDEN-TEMPLATE TEST</p>
+          <h2>S08 tuning gains versus S09-S10 future gains</h2>
+        </div>
+      </div>
+      <p class="chart-explanation">Each point is one pre-declared sequence family on one sequence boundary. A useful rule must land above zero on the vertical future-gain axis; points that rise only on the horizontal tuning axis are selection overfit.</p>
+      <div id="sequence-family-scatter" class="chart chart-large compact-scatter-text" aria-label="Sequence tuning gain versus holdout gain scatterplot"></div>
+    </section>
+
+    <section class="two-column sequence-detail-grid">
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">DEEPER STRESS TEST</p><h2>New S08 gains versus future gains</h2></div></div>
+        <p class="chart-explanation">These are the added long-history, adaptive-context, balance, and algebraic families. A rule must finish above the horizontal zero line on S09-S10.</p>
+        <div id="advanced-sequence-scatter" class="chart" aria-label="Advanced sequence tuning versus holdout gain scatterplot"></div>
+      </article>
+      <article class="chart-section stress-results">
+        <div class="section-heading compact"><div><p class="section-kicker">RANDOMNESS CHECKS</p><h2>Compression and within-run balance</h2></div></div>
+        <p class="chart-explanation">Shorter compression or unusually balanced contestant runs would indicate structure even when a specific predictor misses it. Both are compared with position-preserving shuffled catalogues.</p>
+        <dl>
+          <div><dt>zlib compressed bytes</dt><dd id="compression-zlib"></dd></div>
+          <div><dt>LZ78 phrase count</dt><dd id="compression-lz"></dd></div>
+          <div><dt>Within-run same-letter pairs</dt><dd id="run-balance"></dd></div>
+          <div><dt>Configurations searched</dt><dd id="advanced-search-count"></dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <section class="two-column sequence-detail-grid">
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">LONG MOTIFS</p><h2>Observed recurrence versus shuffled recurrence</h2></div></div>
+        <p class="chart-explanation">Contiguous 3-8 answer strings are compared with shuffles preserving season and within-run position. The diagonal means no excess recurrence.</p>
+        <div id="motif-scatter" class="chart" aria-label="Observed and shuffled motif recurrence scatterplot"></div>
+      </article>
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">CHRONOLOGICAL DEPENDENCE</p><h2>Lag effect across 512 Q2+ boards</h2></div></div>
+        <p class="chart-explanation">The vertical axis is observed same-letter rate minus a season-and-position-stratified shuffle expectation. Isolated peaks must survive FDR across all 512 lags.</p>
+        <div id="chronological-lag-scatter" class="chart" aria-label="Chronological lag residual scatterplot"></div>
+      </article>
+    </section>
+
+    <section class="two-column sequence-detail-grid">
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">WITHIN-RUN LAGS</p><h2>Same-letter rate at supported run lags</h2></div></div>
+        <p class="chart-explanation">Logical contestant continuations are joined, Q1 is removed, rebroadcast blocks are deduplicated, and lags through 20 are tested. The chart omits only lags with fewer than 30 comparisons; all results remain in JSON.</p>
+        <div id="long-lag-chart" class="chart" aria-label="Long within-run lag chart"></div>
+      </article>
+      <article class="chart-section">
+        <div class="section-heading compact"><div><p class="section-kicker">PERIOD SEARCH</p><h2>Strongest categorical spectral peaks</h2></div></div>
+        <p class="chart-explanation">Power is shown for the strongest candidate periods between 2 and 1,000 questions. Significance uses the maximum peak from each shuffled catalogue, not an uncorrected pointwise test.</p>
+        <div id="spectrum-scatter" class="chart" aria-label="Categorical periodogram peak scatterplot"></div>
+      </article>
+    </section>
+
+    <section class="chart-section overview-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">MARGINAL DISTRIBUTION</p>
+          <h2>Correct letters are not uniform</h2>
+        </div>
+        <div id="distribution-filter" class="segmented" role="group" aria-label="Distribution subset"></div>
+      </div>
+      <div class="chart-and-note">
+        <div id="distribution-chart" class="chart chart-large" aria-label="Correct answer distribution chart"></div>
+        <aside class="stat-note">
+          <span>Uniformity test</span>
+          <strong id="uniformity-p"></strong>
+          <p id="uniformity-note"></p>
+        </aside>
+      </div>
+      <p class="chart-explanation">This is the marginal letter mix, not a sequential rule. Filters remove Q1 so the public Q1-D convention cannot dominate the result.</p>
+    </section>
+
+    <section class="two-column">
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">FORMAT SHIFT</p>
+            <h2>Q1 by season</h2>
+          </div>
+        </div>
+        <div id="q1-season-chart" class="chart" aria-label="Q1 answer shares by season"></div>
+        <p class="chart-explanation">Background context only: this documents the established Q1 format change and is excluded from the primary sequence search.</p>
+      </article>
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">LATER ERA, Q2+</p>
+            <h2>B/C preference, D avoidance</h2>
+          </div>
+        </div>
+        <div id="modern-q2-chart" class="chart" aria-label="Godler era Q2 and later distribution"></div>
+        <p class="chart-explanation">This persistent marginal imbalance supplies the low-information B fallback that every sequence model must beat.</p>
+      </article>
+    </section>
+
+    <section class="chart-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">QUESTION POSITION</p>
+          <h2>Letter share at each ladder position</h2>
+        </div>
+        <div id="position-filter" class="segmented" role="group" aria-label="Position era"></div>
+      </div>
+      <div id="position-heatmap" class="chart chart-heatmap" aria-label="Question number and answer heatmap"></div>
+      <p class="chart-explanation">Cells show letter share by ladder position. Beyond Q1, position effects are small and unstable compared with the broad B/C preference.</p>
+    </section>
+
+    <section class="chart-section">
+      <div class="section-heading compact">
+        <div>
+          <p class="section-kicker">SEASON DRIFT</p>
+          <h2>Answer mix across canonical seasons</h2>
+        </div>
+      </div>
+      <div id="season-chart" class="chart chart-large" aria-label="Answer distribution by season"></div>
+      <p class="chart-explanation">Season is used only to describe drift and define chronological evaluation; it is never supplied as a predictive feature.</p>
+    </section>
+
+    <section class="two-column sequence-grid">
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">SEQUENCE</p>
+            <h2>Previous letter to next letter</h2>
+          </div>
+        </div>
+        <div id="transition-heatmap" class="chart" aria-label="Answer transition matrix"></div>
+        <p class="chart-explanation">Rows condition on the previous answer and columns show the next answer. Differences are statistically detectable but too small to predict future seasons.</p>
+      </article>
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">SERIAL DEPENDENCE</p>
+            <h2>Same-letter rate by lag</h2>
+          </div>
+        </div>
+        <div id="lag-chart" class="chart" aria-label="Same letter rate by lag"></div>
+        <p class="chart-explanation">This short-lag view is retained for comparison; the dedicated long-lag section above provides the corrected 20-lag test.</p>
+      </article>
+    </section>
+
+    <section class="chart-section model-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">CHRONOLOGICAL HOLDOUT</p>
+          <h2>What predicts S09-S10?</h2>
+        </div>
+        <div id="model-filter" class="segmented" role="group" aria-label="Model metric"></div>
+      </div>
+      <div id="model-chart" class="chart chart-models" aria-label="Model accuracy comparison"></div>
+      <div class="baseline-key"><span></span> Uniform random reference: 25%</div>
+      <p class="chart-explanation">All scores are on future S09-S10 rows. Models include board shape, option-candidate features, text, sequence history, and question-content retrieval.</p>
+    </section>
+
+    <section class="two-column final-grid">
+      <article class="chart-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">ASSOCIATIONS</p>
+            <h2>Effect size by feature</h2>
+          </div>
+        </div>
+        <div id="association-chart" class="chart" aria-label="Cramer's V by feature"></div>
+        <p class="chart-explanation">Association is descriptive and can be confounded by format drift. Effect size, not a tiny p-value from a large catalogue, is the relevant scale.</p>
+      </article>
+      <article class="chart-section verdict-panel">
+        <p class="section-kicker">VERDICT</p>
+        <h2>Content reuse works; letter templates do not</h2>
+        <dl>
+          <div><dt>Modern Q1</dt><dd>D in <strong id="verdict-q1"></strong></dd></div>
+          <div><dt>Modern Q2+</dt><dd>B in <strong id="verdict-b"></strong>, D in <strong id="verdict-d"></strong></dd></div>
+          <div><dt>Adjacent repeat</dt><dd><strong id="verdict-repeat"></strong> versus 25% reference</dd></div>
+          <div><dt>Best future score</dt><dd><strong id="verdict-best"></strong></dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <section class="findings-narrative" aria-labelledby="findings-heading">
+      <p class="section-kicker">INTERPRETATION</p>
+      <h2 id="findings-heading">Findings and limits</h2>
+      <div class="narrative-columns">
+        <div><h3>What was tested</h3><p id="html-tested"></p></div>
+        <div><h3>What failed to generalize</h3><p id="html-failed"></p></div>
+        <div><h3>What remains useful</h3><p id="html-useful"></p></div>
+        <div><h3>What is not claimed</h3><p id="html-limits"></p></div>
+      </div>
+    </section>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>

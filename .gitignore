@@ -1,0 +1,18 @@
+/_site/
+/node_modules/
+/.cache/
+/.models/
+/.python/
+/.translation-runtime/
+/.venv/
+/.idea/
+
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Only CSV-referenced episode evidence belongs in the web catalogue.
+/work/*
+!/work/s??e??_frames/
+!/work/s??e??_frames/**
+Thumbs.db
