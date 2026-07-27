@@ -35,7 +35,9 @@ export default class QuestionsPage {
         const occurrenceLabel = sl ? `${group.occurrences} pojavitev` : `${group.occurrences} occurrences`;
         return `<details class="repeat-group repeat-group--${group.kind}"><summary><span>${kind}</span><strong${lang === "en" ? ' lang="sl"' : ""}>${escapeHtml(representativePrompt)}</strong><small>${occurrenceLabel}</small></summary><ol>${group.questions.map((question) => {
           const prompt = question.prompt;
-          return `<li><a href="${questionPath(question, lang)}"><span>${question.episodeKey.toUpperCase()} · Q${question.questionNumber}</span><strong${lang === "en" ? ' lang="sl"' : ""}>${escapeHtml(prompt)}</strong><small>${escapeHtml(question.contestantName)}</small></a></li>`;
+          const correctLetter = question.correctAnswer.toUpperCase();
+          const correctText = question.answers[correctLetter];
+          return `<li><a href="${questionPath(question, lang)}"><span>${question.episodeKey.toUpperCase()} · Q${question.questionNumber}</span><strong${lang === "en" ? ' lang="sl"' : ""}>${escapeHtml(prompt)}</strong><small class="repeat-correct-answer"${lang === "en" ? ' lang="sl"' : ""}><b>${correctLetter}</b> - ${escapeHtml(correctText)}</small></a></li>`;
         }).join("")}</ol></details>`;
       }).join("")}</div></section>
       <section class="recent-questions"><header class="section-heading section-heading--inline"><div><p class="eyebrow">${sl ? "ZADNJE EPIZODE" : "LATEST EPISODES"}</p><h2>${sl ? "Nedavno predvajana vprašanja" : "Recently aired questions"}</h2></div><a class="text-link" href="${pathFor(lang, "search")}">${sl ? "Napredno iskanje" : "Advanced search"}</a></header><ol>${sample.map((question) => {

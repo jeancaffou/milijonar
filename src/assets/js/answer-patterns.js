@@ -31,6 +31,7 @@
     "Modern rule + repeat memory": "Sodobno pravilo z upoštevanjem ponovitev",
     "Modern rule + tuned near-repeat memory": "Sodobno pravilo in podobna ponovljena vprašanja",
     "Question-position frequency lookup": "Pogostost črk glede na mesto vprašanja",
+    "Reviewed-topic hierarchical prior": "Hierarhični model pregledanih tem",
     "Longest option heuristic": "Pravilo najdaljše možnosti",
     "Shortest option heuristic": "Pravilo najkrajše možnosti",
     "Least-used-in-run heuristic": "Najredkeje uporabljena črka v igri",
@@ -55,7 +56,7 @@
     difficulty_band: tr("Difficulty band", "Težavnostni razred"),
     host_name: tr("Host", "Voditelj"),
     weekday: tr("Weekday", "Dan v tednu"),
-    topic_hint: tr("Topic hint", "Namig teme"),
+    topic_hint: tr("Reviewed question topic", "Pregledana tema vprašanja"),
   };
   const associationLabel = (field) => associationLabels[field] || field;
 
@@ -1016,6 +1017,8 @@
     const chronologicalRule = sequence.chronological.predictive.periodic_lag;
     const advanced = sequence.chronological.advanced;
     const recurrence = advanced.modular_recurrence;
+    const topicModel = data.topic_forecasting.model;
+    const topicDetails = topicModel.details;
     const peak = sequence.chronological.descriptive.periodogram.top_peaks[0];
     const sourceSummary = $("#source-summary");
     const holdoutSummary = document.createElement("span");
@@ -1032,8 +1035,8 @@
     setText("#summary-search", integer(sequence.total_tuned_sequence_configurations));
     setText("#summary-best", pct(bestQ2Model.non_q1_accuracy, 2));
     setText("#top-summary", tr(
-      `After removing Q1, joining contestant continuations, deduplicating the repeated broadcast block, and searching ${integer(sequence.total_tuned_sequence_configurations)} sequence configurations, no answer-order rule beats the B fallback on S09-S10. Long-history ML, adaptive contexts, balanced blocks, and ${integer(recurrence.configurations_tested)} algebraic recurrences all reverse or worsen on future seasons.`,
-      `Po odstranitvi Q1, povezavi nadaljevanj istih tekmovalcev, odstranitvi ponovljenega predvajanja in pregledu ${integer(sequence.total_tuned_sequence_configurations)} nastavitev zaporedij nobeno pravilo vrstnega reda črk na S09–S10 ni preseglo osnovnega pravila vedno B. Modeli z dolgo zgodovino, prilagodljivim kontekstom, uravnoteženimi bloki in ${integer(recurrence.configurations_tested)} algebraičnimi rekurencami so bili na testni množici enako ali manj točni.`,
+      `After removing Q1, joining contestant continuations, deduplicating the repeated broadcast block, and searching ${integer(sequence.total_tuned_sequence_configurations)} sequence configurations plus ${integer(topicDetails.candidate_configuration_count)} reviewed-topic/meta configurations, no metadata-only rule beats the B fallback on S09-S10. The selected topic model reaches ${pct(topicModel.non_q1_accuracy, 2)} on future Q2+, versus ${pct(data.holdout.q2_plus_uniformity.letters.B.share, 2)} for B.`,
+      `Po odstranitvi Q1, povezavi nadaljevanj istih tekmovalcev, odstranitvi ponovljenega predvajanja ter pregledu ${integer(sequence.total_tuned_sequence_configurations)} nastavitev zaporedij in ${integer(topicDetails.candidate_configuration_count)} nastavitev pregledanih tem oziroma metapodatkov nobeno pravilo samo iz metapodatkov na S09–S10 ni preseglo osnovnega pravila vedno B. Izbrani tematski model je na prihodnjih vprašanjih Q2+ dosegel ${pct(topicModel.non_q1_accuracy, 2)}, pravilo B pa ${pct(data.holdout.q2_plus_uniformity.letters.B.share, 2)}.`,
     ));
     setText("#finding-prefix", `${pct(prefixFamily.holdout.delta, 2)} ${tr("future gain", "razlike v točnosti na testni množici")}`);
     setText("#finding-prefix-note", tr(
@@ -1051,24 +1054,24 @@
       `Iskanje skoraj ponovljenih vprašanj izboljša rezultat vedno B (${pct(data.holdout.q2_plus_uniformity.letters.B.share, 2)}), ker se besedilo znanega pravilnega odgovora znova pojavi med trenutnimi možnostmi.`,
     ));
     setText("#search-scope", tr(
-      `${integer(sequence.total_tuned_sequence_configurations)} sequence configurations were selected without S09-S10: exact and backoff n-grams through order 32, first-prefix and shifted/remapped templates, periods and chronological lags through 512, balanced blocks at every phase, multiscale history models through 128 lags, hidden templates, and two-lag algebraic recurrences under every letter encoding. Compression and spectral nulls use position-preserving shuffles.`,
-      `${integer(sequence.total_tuned_sequence_configurations)} nastavitev je bilo izbranih brez vpogleda v S09–S10: natančni in rezervni n-grami do reda 32, začetne predpone, zamaknjeni in preslikani vzorci, periode in kronološki zamiki do 512, uravnoteženi bloki pri vseh fazah, večmerilni modeli zgodovine do 128 zamikov, skriti vzorci ter algebraične rekurence z dvema zamikoma pri vseh kodiranjih črk. Preizkusa stiskanja in spektra uporabljata premešanja, ki ohranijo mesto vprašanja.`,
+      `${integer(sequence.total_tuned_sequence_configurations)} sequence configurations and ${integer(topicDetails.candidate_configuration_count)} topic/meta configurations were selected without S09-S10. The latter combine 310 reviewed topics or 15 broad groups with question position, difficulty band, the previous revealed answer, and seven shrinkage strengths. Sequence tests include n-grams through order 32, periods and lags through 512, balanced blocks, 128-lag histories, hidden templates, and two-lag algebraic recurrences. Compression and spectral nulls use position-preserving shuffles.`,
+      `Brez vpogleda v S09–S10 je bilo izbranih ${integer(sequence.total_tuned_sequence_configurations)} nastavitev zaporedij in ${integer(topicDetails.candidate_configuration_count)} nastavitev tem oziroma metapodatkov. Slednje združujejo 310 pregledanih tem ali 15 širših skupin z mestom vprašanja, težavnostnim razredom, prejšnjim razkritim odgovorom in sedmimi močmi krčenja. Preizkusi zaporedij vključujejo n-grame do reda 32, periode in zamike do 512, uravnotežene bloke, zgodovine do 128 zamikov, skrite vzorce ter algebraične rekurence z dvema zamikoma. Preizkusa stiskanja in spektra uporabljata premešanja, ki ohranijo mesto vprašanja.`,
     ));
     setText("#html-tested", tr(
-      `The search covers displayed-board and effective-ladder streams at logical contestant, episode, and uninterrupted chronological boundaries. Prefix-locked models see only the first few Q2+ answers; adaptive models consume only already revealed answers. The deeper pass adds recency gaps, rolling counts, fixed block quotas, online contexts through order 32, nonlinear 128-lag histories, and 221,184 sum/difference/XOR recurrences under all A/B/C/D encodings.`,
-      `Analiza zajema zaporedja prikazanih vprašanj in dejansko napredovanje po povezanih igrah tekmovalcev, epizodah ter neprekinjeni kronologiji. Modeli začetne predpone uporabljajo le prvih nekaj odgovorov Q2+, prilagodljivi modeli pa samo že prikazane odgovore. Dodatno so preverjeni razmiki od zadnje črke, drseča štetja, fiksne kvote blokov, sprotni konteksti do reda 32, nelinearne zgodovine s 128 zamiki in 221.184 rekurenc vsote, razlike ter XOR pri vseh kodiranjih A/B/C/D.`,
+      `The search covers displayed-board and effective-ladder streams at logical contestant, episode, and uninterrupted chronological boundaries. Prefix-locked models see only the first few Q2+ answers; adaptive models consume only already revealed answers. The topic pass uses the complete row-by-row semantic review and tests topic, question number, difficulty band, and the previous answer. The deeper sequence pass adds recency gaps, rolling counts, fixed block quotas, online contexts through order 32, nonlinear 128-lag histories, and 221,184 sum/difference/XOR recurrences under all A/B/C/D encodings.`,
+      `Analiza zajema zaporedja prikazanih vprašanj in dejansko napredovanje po povezanih igrah tekmovalcev, epizodah ter neprekinjeni kronologiji. Modeli začetne predpone uporabljajo le prvih nekaj odgovorov Q2+, prilagodljivi modeli pa samo že prikazane odgovore. Tematski del uporablja celoten pregled vsake vrstice ter preverja temo, številko vprašanja, težavnostni razred in prejšnji odgovor. Dodatni pregled zaporedij vključuje razmike od zadnje črke, drseča štetja, fiksne kvote blokov, sprotne kontekste do reda 32, nelinearne zgodovine s 128 zamiki in 221.184 rekurenc vsote, razlike ter XOR pri vseh kodiranjih A/B/C/D.`,
     ));
     setText("#html-failed", tr(
-      `Every original primary sequence family remains negative on pooled S09-S10. The best new S08 recurrence gains ${pct(recurrence.tuning.delta, 2)} during selection but loses ${pct(-recurrence.holdout.delta, 2)} against B in future seasons. The selected history tree, history logistic, adaptive backoff, and balance rule also lose. None of 512 corrected lags or periods through 1,000 is significant, and the stream is not unusually compressible.`,
-      `Vsaka glavna družina pravil zaporedja je na združenih S09–S10 slabša od osnovnega pravila B. Najboljša nova rekurenca je bila na S08 za ${pct(recurrence.tuning.delta, 2)} točnejša, na testni množici pa za ${pct(-recurrence.holdout.delta, 2)} manj točna od pravila B. Manj točni so bili tudi drevesni in logistični model zgodovine, prilagodljivi odmik ter pravilo ravnotežja. Noben od 512 popravljenih zamikov ali period do 1.000 ni statistično značilen, zaporedje pa ni nenavadno dobro stisljivo.`,
+      `Every original primary sequence family remains negative on pooled S09-S10. Topic/meta selection chose “${topicDetails.selected_label}” with strong shrinkage (${integer(topicDetails.selected_alpha)}), but it loses ${pct(-topicModel.non_q1_delta_vs_majority, 2)} against B on future Q2+. The selected history tree, history logistic, adaptive backoff, and balance rule also lose. None of 512 corrected lags or periods through 1,000 is significant, and the stream is not unusually compressible.`,
+      `Vsaka glavna družina pravil zaporedja je na združenih S09–S10 slabša od osnovnega pravila B. Izbor tem in metapodatkov je izbral širšo temo z močnim krčenjem (${integer(topicDetails.selected_alpha)}), vendar je bil na prihodnjih vprašanjih Q2+ za ${pct(-topicModel.non_q1_delta_vs_majority, 2)} manj točen od pravila B. Manj točni so bili tudi drevesni in logistični model zgodovine, prilagodljivi odmik ter pravilo ravnotežja. Noben od 512 popravljenih zamikov ali period do 1.000 ni statistično značilen, zaporedje pa ni nenavadno dobro stisljivo.`,
     ));
     setText("#html-useful", tr(
-      `The durable predictive signal is content reuse. Exact and near-matching historical questions can identify a known correct answer when the same answer text appears among current options. Without such a match, B is a low-confidence Q2+ prior, not a decoded next step.`,
-      `Uporabna napovedna informacija izhaja iz ponavljanja vsebine. Enako ali zelo podobno preteklo vprašanje lahko pokaže znani pravilni odgovor, kadar se isto besedilo znova pojavi med možnostmi. Brez takega ujemanja večji delež črke B pri Q2+ ne pomeni, da je mogoče določiti naslednji odgovor.`,
+      `The durable predictive signal is content reuse: the tuned near-repeat model reaches ${pct(bestQ2Model.non_q1_accuracy, 2)} on future Q2+. Exact and near-matching historical questions can identify a known correct answer when the same answer text appears among current options. Without such a match, topic, position, and prior sequence do not improve on B, which remains a low-confidence Q2+ prior rather than a decoded next step.`,
+      `Uporabna napovedna informacija izhaja iz ponavljanja vsebine: prilagojeni model skoraj ponovljenih vprašanj na prihodnjih Q2+ doseže ${pct(bestQ2Model.non_q1_accuracy, 2)}. Enako ali zelo podobno preteklo vprašanje lahko pokaže znani pravilni odgovor, kadar se isto besedilo znova pojavi med možnostmi. Brez takega ujemanja tema, mesto vprašanja in prejšnje zaporedje ne izboljšajo pravila B, ki ostaja le šibka osnovna verjetnost in ne razkrit naslednji odgovor.`,
     ));
     setText("#html-limits", tr(
-      `Failure to find a rule does not prove the setters use physical or cryptographic randomness. It does show that the searched deterministic, shifted, periodic, balanced, algebraic, clustered, long-memory, lexical, and board-shape rules do not generalize at useful accuracy from this catalogue. Recording order may differ from airing order, and 19 known source-gap boards remain unavailable.`,
-      `Neuspešno iskanje pravila ne potrjuje fizične ali kriptografske naključnosti. Pokaže pa, da preverjena deterministična, zamaknjena, periodična, uravnotežena, algebraična, skupinska, zgodovinska, besedilna pravila in pravila oblike vprašanja na testnih podatkih ne dosegajo uporabne točnosti. Vrstni red snemanja se lahko razlikuje od vrstnega reda predvajanja, podatki za 19 znanih manjkajočih vprašanj pa niso na voljo.`,
+      `Failure to find a rule does not prove the setters use physical or cryptographic randomness. It does show that the searched topic, question-position, previous-answer, deterministic, shifted, periodic, balanced, algebraic, clustered, long-memory, lexical, and board-shape rules do not generalize at useful accuracy from this catalogue. Recording order may differ from airing order, and 19 known source-gap boards remain unavailable.`,
+      `Neuspešno iskanje pravila ne potrjuje fizične ali kriptografske naključnosti. Pokaže pa, da preverjena pravila teme, mesta vprašanja, prejšnjega odgovora, deterministična, zamaknjena, periodična, uravnotežena, algebraična, skupinska, zgodovinska, besedilna pravila in pravila oblike vprašanja na testnih podatkih ne dosegajo uporabne točnosti. Vrstni red snemanja se lahko razlikuje od vrstnega reda predvajanja, podatki za 19 znanih manjkajočih vprašanj pa niso na voljo.`,
     ));
     setText("#verdict-q1", pct(data.modern_era.q1_letters.D.share, 2));
     setText("#verdict-b", pct(data.modern_era.q2_plus_letters.B.share, 2));

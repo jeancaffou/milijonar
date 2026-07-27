@@ -2153,6 +2153,16 @@ tr.is-unavailable {
   line-height: 1.35;
 }
 
+.repeat-group li .repeat-correct-answer {
+  color: var(--green);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.repeat-correct-answer b {
+  font-weight: 800;
+}
+
 .recent-questions a {
   display: grid;
   grid-template-columns: 2.8rem minmax(0, 1fr);

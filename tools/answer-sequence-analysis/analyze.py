@@ -42,6 +42,8 @@ CONTESTANTS = ROOT / "contestants.csv"
 WORK_DIR = ROOT / "work" / "analysis-output" / "answer-sequences"
 FEATURES = WORK_DIR / "features.csv"
 RESULTS = ROOT / "src" / "assets" / "data" / "answer-patterns.json"
+TOPIC_ASSIGNMENTS = ROOT / "src" / "_data" / "curated" / "question-topic-assignments.json"
+TOPIC_CATALOG = ROOT / "src" / "_data" / "generated" / "question-topics.json"
 LETTERS = ("A", "B", "C", "D")
 LETTER_TO_INDEX = {letter: index for index, letter in enumerate(LETTERS)}
 WORD_RE = re.compile(r"[^\W_]+(?:[-'][^\W_]+)*", re.UNICODE)
@@ -316,8 +318,39 @@ def load_questions() -> list[dict[str, str]]:
     return rows
 
 
+def load_reviewed_topics(row_count: int) -> list[dict[str, str]]:
+    assignments_payload = json.loads(TOPIC_ASSIGNMENTS.read_text(encoding="utf-8"))
+    catalog_payload = json.loads(TOPIC_CATALOG.read_text(encoding="utf-8"))
+    source_hash = hashlib.sha256(QUESTIONS.read_bytes()).hexdigest()
+    assignments = assignments_payload.get("assignments", [])
+    if (
+        assignments_payload.get("source_sha256") != source_hash
+        or catalog_payload.get("source_sha256") != source_hash
+        or assignments_payload.get("question_count") != row_count
+        or catalog_payload.get("question_count") != row_count
+        or len(assignments) != row_count
+        or any(int(item.get("row_index", -1)) != index for index, item in enumerate(assignments))
+    ):
+        raise ValueError("Reviewed topic assignments do not exactly match questions.csv")
+    topic_metadata = {
+        str(item["id"]): item for item in catalog_payload.get("topics", [])
+    }
+    output = []
+    for item in assignments:
+        topic_id = str(item["topic_id"])
+        if topic_id not in topic_metadata:
+            raise ValueError(f"Reviewed topic is absent from generated catalogue: {topic_id}")
+        output.append({
+            "topic_id": topic_id,
+            "topic_broad_id": str(topic_metadata[topic_id]["broad_id"]),
+            "topic_confidence": str(item["confidence"]),
+        })
+    return output
+
+
 def engineer_features(raw_rows: list[dict[str, str]]) -> list[dict[str, object]]:
     charity_runs = load_charity_runs()
+    reviewed_topics = load_reviewed_topics(len(raw_rows))
     fingerprints = Counter(normalized_text(row["question"]) for row in raw_rows)
     duplicate_groups = Counter(
         (row["season"], row["episode"], row["contestant_name"], row["question_number"])
@@ -365,7 +398,8 @@ def engineer_features(raw_rows: list[dict[str, str]]) -> list[dict[str, object]]
         notes = normalized_text(row["notes"])
         question = row["question"].strip()
         fingerprint = normalized_text(question)
-        topic, topic_hits = classify_topic(question)
+        reviewed_topic = reviewed_topics[global_index - 1]
+        keyword_topic, topic_hits = classify_topic(question)
         q_words = words(question)
         option_values = {letter: row[f"answer_{letter.lower()}"].strip() for letter in LETTERS}
         option_shapes = {letter: option_shape(value) for letter, value in option_values.items()}
@@ -459,7 +493,10 @@ def engineer_features(raw_rows: list[dict[str, str]]) -> list[dict[str, object]]
             "question_has_year": int(bool(YEAR_RE.search(question))),
             "question_has_negation": int(any(token in normalized_text(question).split() for token in ("ne", "ni", "nima", "nikoli"))),
             "interrogative": interrogative(question),
-            "topic_hint": topic,
+            "topic_hint": reviewed_topic["topic_id"],
+            "topic_broad_id": reviewed_topic["topic_broad_id"],
+            "topic_confidence": reviewed_topic["topic_confidence"],
+            "legacy_keyword_topic_hint": keyword_topic,
             "topic_keyword_hits": topic_hits,
             "option_char_mean": round(char_mean, 4),
             "option_char_std": round(char_std, 4),
@@ -1167,6 +1204,132 @@ def modern_two_rule_predictions(
     }
 
 
+def topic_meta_key(row: dict[str, object], fields: tuple[str, ...]) -> tuple[str, ...]:
+    return tuple(str(row[field] or "NONE") for field in fields)
+
+
+def topic_meta_prior_apply(
+    train_rows: list[dict[str, object]],
+    evaluation_rows: list[dict[str, object]],
+    fields: tuple[str, ...],
+    alpha: float,
+) -> tuple[np.ndarray, np.ndarray, dict[str, int]]:
+    band_counts: dict[str, Counter[str]] = {
+        "q1": Counter(),
+        "q2_plus": Counter(),
+    }
+    keyed_counts: dict[tuple[str, tuple[str, ...]], Counter[str]] = defaultdict(Counter)
+    for row in train_rows:
+        band = "q1" if int(row["question_number"]) == 1 else "q2_plus"
+        letter = str(row["correct_answer"])
+        band_counts[band][letter] += 1
+        keyed_counts[(band, topic_meta_key(row, fields))][letter] += 1
+
+    band_priors = {}
+    for band, counts in band_counts.items():
+        vector = np.array([counts[letter] + 1 for letter in LETTERS], dtype=float)
+        band_priors[band] = vector / vector.sum()
+
+    predictions = []
+    probabilities = []
+    supported = 0
+    support_total = 0
+    for row in evaluation_rows:
+        band = "q1" if int(row["question_number"]) == 1 else "q2_plus"
+        counts = keyed_counts.get((band, topic_meta_key(row, fields)), Counter())
+        support = sum(counts.values())
+        vector = alpha * band_priors[band] + np.array(
+            [counts[letter] for letter in LETTERS], dtype=float
+        )
+        vector /= vector.sum()
+        probabilities.append(vector)
+        predictions.append(int(np.argmax(vector)))
+        supported += int(support > 0)
+        support_total += support
+    return (
+        np.array(predictions),
+        np.array(probabilities),
+        {
+            "supported_rows": supported,
+            "unseen_key_rows": len(evaluation_rows) - supported,
+            "mean_training_support": support_total / len(evaluation_rows) if evaluation_rows else 0,
+        },
+    )
+
+
+def tuned_topic_meta_predictions(
+    modern_rows: list[dict[str, object]],
+    test_rows: list[dict[str, object]],
+) -> tuple[np.ndarray, np.ndarray, dict[str, object]]:
+    configs = (
+        ("broad topic", ("topic_broad_id",)),
+        ("reviewed topic", ("topic_hint",)),
+        ("reviewed topic + difficulty band", ("topic_hint", "difficulty_band")),
+        ("reviewed topic + question position", ("topic_hint", "question_number")),
+        ("reviewed topic + previous answer", ("topic_hint", "ladder_prev_1")),
+        (
+            "reviewed topic + question position + previous answer",
+            ("topic_hint", "question_number", "ladder_prev_1"),
+        ),
+    )
+    alphas = (2.0, 5.0, 10.0, 20.0, 40.0, 80.0, 160.0)
+    tuning_train = [row for row in modern_rows if int(row["season"]) <= 7]
+    tuning_rows = [row for row in modern_rows if int(row["season"]) == 8]
+    tuning_scores = []
+    for label, fields in configs:
+        for alpha in alphas:
+            predictions, probabilities, support = topic_meta_prior_apply(
+                tuning_train, tuning_rows, fields, alpha
+            )
+            actual = np.array([
+                LETTER_TO_INDEX[str(row["correct_answer"])] for row in tuning_rows
+            ])
+            q2_mask = np.array([int(row["question_number"]) > 1 for row in tuning_rows])
+            tuning_scores.append({
+                "label": label,
+                "fields": fields,
+                "alpha": alpha,
+                "accuracy": float(np.mean(predictions == actual)),
+                "q2_plus_accuracy": float(np.mean(predictions[q2_mask] == actual[q2_mask])),
+                "brier_score": float(np.mean(
+                    np.sum((probabilities - np.eye(4)[actual]) ** 2, axis=1)
+                )),
+                **support,
+            })
+    selected = max(
+        tuning_scores,
+        key=lambda item: (
+            float(item["q2_plus_accuracy"]),
+            float(item["accuracy"]),
+            -float(item["brier_score"]),
+            float(item["alpha"]),
+            -len(item["fields"]),
+        ),
+    )
+    final_train = [row for row in modern_rows if int(row["season"]) <= 8]
+    predictions, probabilities, support = topic_meta_prior_apply(
+        final_train,
+        test_rows,
+        tuple(selected["fields"]),
+        float(selected["alpha"]),
+    )
+    return predictions, probabilities, {
+        "train_scope": "S03-S08; configuration and shrinkage selected on S08 after fitting S03-S07",
+        "method": "Reviewed-topic categorical counts shrunk toward separate modern Q1 and Q2+ letter priors",
+        "candidate_configuration_count": len(tuning_scores),
+        "selected_label": selected["label"],
+        "selected_fields": list(selected["fields"]),
+        "selected_alpha": selected["alpha"],
+        "s08_tuning_accuracy": selected["accuracy"],
+        "s08_tuning_q2_plus_accuracy": selected["q2_plus_accuracy"],
+        "s08_tuning_brier_score": selected["brier_score"],
+        "s08_supported_rows": selected["supported_rows"],
+        "holdout_support": support,
+        "reviewed_topic_count": len({str(row["topic_hint"]) for row in modern_rows}),
+        "broad_topic_count": len({str(row["topic_broad_id"]) for row in modern_rows}),
+    }
+
+
 def repeat_memory_predictions(
     train_rows: list[dict[str, object]], test_rows: list[dict[str, object]]
 ) -> tuple[np.ndarray, np.ndarray, dict[str, object]]:
@@ -1646,6 +1809,16 @@ def run_analysis(rows: list[dict[str, object]]) -> dict[str, object]:
     position_result["details"] = position_details
     model_results.append(position_result)
 
+    topic_predictions, topic_probabilities, topic_details = tuned_topic_meta_predictions(
+        modern_rows, test_rows
+    )
+    topic_result = evaluate_predictions(
+        "Reviewed-topic hierarchical prior", y_test, topic_predictions,
+        topic_probabilities, majority_predictions, novel_mask, test_rows,
+    )
+    topic_result["details"] = topic_details
+    model_results.append(topic_result)
+
     for strategy, label in (
         ("longest", "Longest option heuristic"),
         ("shortest", "Shortest option heuristic"),
@@ -1826,6 +1999,20 @@ def run_analysis(rows: list[dict[str, object]]) -> dict[str, object]:
             contingency_test(rows, field)
             for field in ("season", "question_number", "difficulty_band", "host_name", "weekday", "topic_hint")
         ],
+        "topic_forecasting": {
+            "assignment_method": (
+                "Complete row-by-row GPT semantic review of the Slovenian question "
+                "and all four answer options"
+            ),
+            "specific_topic_count": len({str(row["topic_hint"]) for row in rows}),
+            "broad_topic_count": len({str(row["topic_broad_id"]) for row in rows}),
+            "confidence_counts": dict(Counter(str(row["topic_confidence"]) for row in rows)),
+            "chronological_selection_rule": (
+                "Choose topic/meta key and shrinkage on S08 after fitting S03-S07; "
+                "refit on S03-S08 and evaluate once on S09-S10"
+            ),
+            "model": topic_result,
+        },
         "sequence": sequence_analysis(rows),
         "long_sequence": long_sequence,
         "option_shape": {
