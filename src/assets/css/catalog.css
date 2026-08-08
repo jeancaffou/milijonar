@@ -1575,6 +1575,206 @@ tr.is-unavailable {
   border-top: 1px solid var(--line);
 }
 
+.fast-fingers-section {
+  margin-block: 3.5rem;
+}
+
+.fast-fingers-rounds {
+  display: grid;
+  gap: 1rem;
+}
+
+.fast-fingers-round {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.fast-fingers-round__copy {
+  min-width: 0;
+}
+
+.fast-fingers-round__copy h3 {
+  margin-bottom: 0.7rem;
+}
+
+.fast-fingers-round__question {
+  margin-bottom: 1.1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.fast-fingers-round__prompt {
+  margin: 0.35rem 0 0.7rem;
+  color: var(--ink-strong);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.fast-fingers-round__answers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 0.8rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.fast-fingers-round__answers span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fast-fingers-round__answers b {
+  margin-right: 0.25rem;
+  color: var(--gold-bright);
+}
+
+.fast-fingers-round__order {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.7rem;
+  align-items: baseline;
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.fast-fingers-round__order span {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fast-fingers-round__order b {
+  color: var(--gold-bright);
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
+.fast-fingers-round__copy ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fast-fingers-round__copy li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.45rem;
+  min-width: 0;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.fast-fingers-round__copy li > span {
+  color: var(--gold-bright);
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.1rem;
+}
+
+.fast-fingers-round__copy li a {
+  overflow: hidden;
+  color: var(--ink-strong);
+  font-size: 0.88rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fast-fingers-round__copy li small {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.fast-fingers-round__winner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: baseline;
+  margin: 1rem 0 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.86rem;
+}
+
+.fast-fingers-round__winner span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.fast-fingers-round__winner a {
+  color: var(--gold-bright);
+  font-weight: 700;
+}
+
+.fast-fingers-round__media {
+  grid-column: 1;
+  grid-row: auto;
+  align-self: start;
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.fast-fingers-round__media figure {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  background: var(--bg-deep);
+}
+
+.fast-fingers-round__media a {
+  display: block;
+}
+
+.fast-fingers-round__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fast-fingers-round__media figcaption {
+  padding: 0.45rem 0.55rem;
+  border-top: 1px solid var(--line-soft);
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 62rem) {
+  .fast-fingers-round {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fast-fingers-round__media {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
 .unavailable-hero {
   grid-template-columns: minmax(0, 1fr) 12rem;
   align-items: center;
@@ -2841,11 +3041,23 @@ tr.is-unavailable {
 }
 
 .person-record {
-  display: grid;
-  justify-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   color: var(--muted);
   font-size: 0.7rem;
   text-align: right;
+}
+
+.person-record > [data-directory-record-label] {
+  white-space: nowrap;
+}
+
+.person-record__value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  white-space: nowrap;
 }
 
 .person-record b {

@@ -33,6 +33,24 @@ function compactAnswers(question) {
   }).join("");
 }
 
+function fastRoundMedia(round, lang) {
+  const item = round.resultEvidence;
+  if (!item) return "";
+  const label = lang === "sl" ? "Pravilni vrstni red" : "Correct order";
+  return `<div class="fast-fingers-round__media"><figure><a href="${item.url}" target="_blank" rel="noopener"><img src="${item.url}" alt="${escapeHtml(label)}" loading="lazy" decoding="async"></a><figcaption>${escapeHtml(label)}</figcaption></figure></div>`;
+}
+
+function fastRoundQuestion(round, lang) {
+  if (!round.question && !round.correctOrder?.length) return "";
+  const title = lang === "sl" ? "Vprašanje in pravilen vrstni red" : "Question and correct order";
+  const orderLabel = lang === "sl" ? "Pravilen vrstni red" : "Correct order";
+  const answers = ["A", "B", "C", "D"]
+    .filter((letter) => round.answers?.[letter])
+    .map((letter) => `<span><b>${letter}</b> ${escapeHtml(round.answers[letter])}</span>`)
+    .join("");
+  return `<div class="fast-fingers-round__question"><p class="overline">${escapeHtml(title)}</p>${round.question ? `<p class="fast-fingers-round__prompt" lang="sl">${escapeHtml(round.question)}</p>` : ""}${answers ? `<div class="fast-fingers-round__answers" lang="sl">${answers}</div>` : ""}${round.correctOrder?.length ? `<p class="fast-fingers-round__order"><span>${escapeHtml(orderLabel)}</span><b>${escapeHtml(round.correctOrder.join(" · "))}</b></p>` : ""}</div>`;
+}
+
 export default class EpisodePage {
   data() {
     return {
@@ -47,6 +65,8 @@ export default class EpisodePage {
     const c = copy[lang];
     const sl = lang === "sl";
     const runEvidence = [...new Map(episode.contestantRuns.flatMap((run) => run.evidence).map((item) => [item.url, item])).values()];
+    const fastFingersRounds = episode.fastFingers || [];
+    const fastFingersSection = fastFingersRounds.length ? `<section class="fast-fingers-section"><header class="section-heading"><p class="eyebrow">${sl ? "HITRI PRSTI" : "FASTEST FINGER FIRST"}</p><h2>${sl ? "Tekmovalci hitrih prstov" : "Fastest Finger First contestants"}</h2><p>${sl ? "Vsak krog prikazuje izvirno vprašanje, pravilen vrstni red, vse tekmovalce in zmagovalca." : "Each round shows the original question, the correct order, every contestant and the winner."}</p></header><div class="fast-fingers-rounds">${fastFingersRounds.map((round) => `<article class="fast-fingers-round"><div class="fast-fingers-round__copy"><p class="overline">${sl ? "KROG" : "ROUND"} ${round.round}</p>${fastRoundQuestion(round, lang)}<h3>${sl ? "Tekmovalci" : "Contestants"}</h3><ol>${round.entrants.map((entrant, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><a href="${pathFor(lang, "contestant", entrant.slug)}">${escapeHtml(entrant.name)}</a>${entrant.location ? `<small>${escapeHtml(entrant.location)}</small>` : ""}</li>`).join("")}</ol><p class="fast-fingers-round__winner"><span>${sl ? "Zmagovalec" : "Winner"}</span>${round.winner ? `<a href="${pathFor(lang, "contestant", round.winnerSlug)}">${escapeHtml(round.winner)}</a>` : c.labels.noData}</p></div>${fastRoundMedia(round, lang)}</article>`).join("")}</div></section>` : "";
     const body = `${breadcrumbs(lang, [{ label: c.nav.episodes, href: pathFor(lang, "episodes") }, { label: episodeLabel(episode) }])}
       <header class="page-hero episode-hero">
         <div><p class="eyebrow">${c.labels.episode}</p><h1>${episodeLabel(episode)}</h1><p><time datetime="${episode.airingDate}">${formatDate(episode.airingDate, lang)}</time></p><div class="episode-hero__links"><a href="${pathFor(lang, "season", episode.seasonKey)}">${c.labels.season} ${String(episode.season).padStart(2, "0")}</a><span>${escapeHtml(episode.hosts.join(", "))}</span></div></div>
@@ -54,6 +74,7 @@ export default class EpisodePage {
       </header>
       <section class="episode-summary" aria-label="${sl ? "Povzetek epizode" : "Episode summary"}"><p><strong>${episode.questionCount}</strong><span>${c.labels.questions}</span></p><p><strong>${episode.runCount}</strong><span>${c.labels.hotSeatRuns}</span></p><p><strong>${episode.people.length}</strong><span>${c.labels.people}</span></p><p><strong>${formatMoney(episode.moneyAwarded, lang)}</strong><span>${sl ? "podeljeni dobitki" : "money awarded"}</span></p></section>
 
+      ${fastFingersSection}
       <section class="run-section"><header class="section-heading"><p class="eyebrow">${sl ? "POTEK ODDAJE" : "EPISODE RUNS"}</p><h2>${c.labels.contestants}</h2></header><div class="run-ledger">${episode.contestantRuns
         .map((run, index) => `<article class="run-entry">
           <span class="run-entry__number">${String(index + 1).padStart(2, "0")}</span>
