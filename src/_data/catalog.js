@@ -9,6 +9,7 @@ import {
   normalizedLetter,
   pad2,
   parseMoney,
+  selectQuestionEvidence,
   seasonKey,
   slugBase,
   splitSemicolon,
@@ -23,6 +24,15 @@ const expectedTopicMethod = "Every question was assigned through GPT semantic re
 async function readCsv(name) {
   const text = await readFile(path.join(catalogDir, name), "utf8");
   return parseCsvObjects(text);
+}
+
+async function readJsonIfPresent(name, fallback) {
+  try {
+    return JSON.parse(await readFile(path.join(catalogDir, name), "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT") return fallback;
+    throw error;
+  }
 }
 
 function isRealPersonName(value) {
@@ -101,6 +111,48 @@ function dateSort(a, b) {
   return a.airingDate.localeCompare(b.airingDate) || a.key.localeCompare(b.key);
 }
 
+function isFastFingersEvidence(item) {
+  const name = path.basename(String(item?.nestedPath || item?.sourcePath || "")).toLowerCase();
+  return ["fast-board", "fast-result"].includes(item?.kind)
+    || /(?:^|[_-])(?:fast|ff)\d*(?:[_-]|\.|$)/.test(name);
+}
+
+function fastFingersFeaturedEvidence(items) {
+  const labelledEvidence = items.filter(isFastFingersEvidence);
+  const evidence = labelledEvidence.length ? labelledEvidence : items;
+  if (!evidence.length) return undefined;
+  const basename = (item) => path.basename(item.nestedPath || item.sourcePath || "");
+  // A settled result or a full ordering board is more useful in the episode
+  // hero than a close-up of the winner. Prefer those explicit frames when
+  // the older archive row contains both kinds of image.
+  return evidence.find((item) => /(?:^|[_-])results?(?:[_\-.]|$)/i.test(basename(item)))
+    || evidence.find((item) => item.kind === "fast-board")
+    || evidence.find((item) => item.kind === "fast-result" && !/(?:winner|portrait|identity)/i.test(basename(item)))
+    || evidence.find((item) => /(?:lineup|order|options?)/i.test(basename(item)))
+    || evidence.find((item) => item.kind === "fast-result")
+    || (evidence.length === 2 ? evidence.at(-1) : evidence.length > 1 ? evidence.at(-2) : evidence[0]);
+}
+
+function fastFingersEvidencePriority(item) {
+  const name = path.basename(String(item?.nestedPath || item?.sourcePath || ""));
+  if (/(?:^|[_-])results?(?:[_\-.]|$)/i.test(name)) return 500;
+  if (/(?:lineup)/i.test(name)) return 450;
+  if (item?.kind === "fast-board") return 400;
+  if (item?.kind === "fast-result") return 350;
+  if (/(?:order|options?)/i.test(name)) return 325;
+  if (/(?:^|[_-])(?:fast|ff)\d*(?:[_\-.]|$)/i.test(name)) return 250;
+  return 100;
+}
+
+function itemForSourcePath(items, sourcePath) {
+  if (!sourcePath) return undefined;
+  return items.find((item) => item.sourcePath === sourcePath);
+}
+
+function firstEvidence(items, predicate) {
+  return items.find(predicate);
+}
+
 function isCharityRun(runRows, runQuestions) {
   const notes = [...runRows, ...runQuestions]
     .map((item) => item.notes || "")
@@ -109,12 +161,24 @@ function isCharityRun(runRows, runQuestions) {
 }
 
 export default async function () {
-  const [questionRows, contestantRows, patternResults, topicResults] = await Promise.all([
+  const [questionRows, contestantRows, patternResults, topicResults, questionAuditFile, contestantAuditFile, fastFingersFile] = await Promise.all([
     readCsv("questions.csv"),
     readCsv("contestants.csv"),
     readFile(path.join(catalogDir, "src", "assets", "data", "answer-patterns.json"), "utf8").then(JSON.parse),
     readFile(path.join(catalogDir, "src", "_data", "generated", "question-topics.json"), "utf8").then(JSON.parse),
+    readJsonIfPresent("audit/question-audit.json", { entries: [] }),
+    readJsonIfPresent("audit/contestant-audit.json", { entries: [] }),
+    readJsonIfPresent("src/_data/curated/fast-fingers.json", { rounds: {} }),
   ]);
+  const curatedFastFingers = fastFingersFile?.rounds && typeof fastFingersFile.rounds === "object"
+    ? fastFingersFile.rounds
+    : {};
+  const questionAuditByRow = new Map((questionAuditFile.entries || [])
+    .filter((entry) => entry && entry.type === "question")
+    .map((entry) => [Number(entry.rowIndex), entry]));
+  const profileAuditByKey = Object.fromEntries((contestantAuditFile.entries || [])
+    .filter((entry) => entry && entry.type === "profile")
+    .map((entry) => [String(entry.key), entry]));
   const questionSource = await readFile(path.join(catalogDir, "questions.csv"), "utf8");
   const topicSourceHash = createHash("sha256").update(questionSource).digest("hex");
   const reviewedTaxonomy = await loadReviewedTaxonomy(catalogDir);
@@ -270,6 +334,12 @@ export default async function () {
     const notes = String(row.notes || "").trim();
     const flags = questionFlags(notes);
     const lifelinesUsed = splitSemicolon(row.lifelines_used);
+    const questionLifelineKeys = lifelineKeys(row.lifelines_used);
+    const displayEvidence = selectQuestionEvidence(evidence, {
+      lifelineKeys: questionLifelineKeys,
+      notes,
+      audit: questionAuditByRow.get(sourceIndex),
+    });
     const contestantIdentityKey = identityKeyFor(contestantName, season, episode);
     const question = {
       sourceIndex,
@@ -295,10 +365,19 @@ export default async function () {
       correctAnswer,
       contestantAnswer,
       lifelinesUsed,
-      lifelineKeys: lifelineKeys(row.lifelines_used),
+      lifelineKeys: questionLifelineKeys,
       sourceTimestamps,
       evidence,
-      primaryEvidence: evidence.find((item) => item.kind === "reveal") || evidence[0],
+      // Only the strict audit-selected primary may be rendered. Keeping the
+      // raw evidence array is useful for diagnostics, but it must not be a
+      // fallback image when a row is pending or source-limited.
+      primaryEvidence: displayEvidence.primary,
+      displayPrimaryEvidence: displayEvidence.primary,
+      displaySupplementalEvidence: displayEvidence.supplemental,
+      displayEvidenceMode: displayEvidence.mode,
+      hasCompleteBoardEvidence: displayEvidence.hasCompleteBoard,
+      hasExplicitCorrectOutcomeEvidence: displayEvidence.hasExplicitCorrectOutcome,
+      auditVerified: Boolean(displayEvidence.auditVerified),
       notes,
       isNoStakes: flags.isNoStakes,
       isWalkAway: flags.isWalkAway,
@@ -308,6 +387,19 @@ export default async function () {
     question.outcome = classifyQuestionOutcome(question);
     return question;
   });
+
+  const strictEvidencePending = questions.filter((question) => !question.displayPrimaryEvidence);
+  if (strictEvidencePending.length) {
+    const sample = strictEvidencePending
+      .slice(0, 12)
+      .map((question) => `${question.episodeKey}:row${question.sourceIndex}`)
+      .join(", ");
+    console.warn(
+      `[catalog] Strict green question evidence is unavailable for ${strictEvidencePending.length} rows `
+      + `(${sample}). Those questions will render without an evidence image; `
+      + "a yellow/orange or unverified frame is never used as a fallback.",
+    );
+  }
 
   const questionIds = new Map();
   for (const question of questions) {
@@ -378,6 +470,7 @@ export default async function () {
         hosts: new Set(),
         questions: [],
         contestantRuns: [],
+        fastFingers: [],
         people: new Set(),
         evidence: [],
         available: true,
@@ -412,7 +505,55 @@ export default async function () {
       [...episode.contestantRuns.flatMap((run) => run.evidence), ...episode.questions.flatMap((question) => question.evidence)],
       (item) => item.sourcePath,
     );
+    episode.fastFingers = episode.contestantRuns
+      .filter((run) => run.entrants.length || run.fastFingersWinner)
+      .map((run, roundIndex) => {
+        // Most later rows use explicit `fast`/`ff` evidence names. Older rows
+        // predate that naming convention, but their run record still consists
+        // of the Fastest Finger First segment, so retain that complete run
+        // evidence as the fallback instead of letting the episode hero fall
+        // back to an arbitrary hot-seat frame.
+        const labelledEvidence = run.evidence.filter(isFastFingersEvidence);
+        const evidence = labelledEvidence.length ? labelledEvidence : run.evidence;
+        const curated = curatedFastFingers[`${episode.key}:${roundIndex + 1}`] || {};
+        const questionEvidence = itemForSourcePath(evidence, curated.boardEvidence)
+          || firstEvidence(evidence, (item) => item.kind === "fast-board")
+          || firstEvidence(evidence, (item) => /(?:order|options?|board)/i.test(item.nestedPath || ""));
+        const resultEvidence = itemForSourcePath(evidence, curated.resultEvidence)
+          || firstEvidence(evidence, (item) => item.kind === "fast-result" && !/(?:winner|profile|portrait|identity)/i.test(item.nestedPath || ""))
+          || firstEvidence(evidence, (item) => /(?:result|order)/i.test(item.nestedPath || ""));
+        const lineupEvidence = itemForSourcePath(evidence, curated.lineupEvidence)
+          || firstEvidence(run.evidence, (item) => item.kind === "lineup")
+          || firstEvidence(run.evidence, (item) => /(?:lineup|profile|identity|name[_-]?strap)/i.test(item.nestedPath || ""));
+        return {
+          round: roundIndex + 1,
+          entrants: run.entrants,
+          winner: run.fastFingersWinner,
+          winnerSlug: run.fastFingersWinnerSlug,
+          evidence,
+          lineupEvidence,
+          // Fast Fingers wording is published only from the curated Slovenian
+          // transcript, never from translated notes. Until a round is audited,
+          // the page leaves this block empty instead of inventing wording.
+          question: curated.question || "",
+          answers: curated.answers || {},
+          correctOrder: curated.correctOrder || [],
+          questionEvidence,
+          resultEvidence,
+          featuredEvidence: resultEvidence || questionEvidence || fastFingersFeaturedEvidence(evidence),
+        };
+      });
+    const fastFingersFeatured = episode.fastFingers
+      .map((round, roundIndex) => ({ item: round.featuredEvidence, roundIndex }))
+      .filter(({ item }) => item)
+      .sort((a, b) => fastFingersEvidencePriority(b.item) - fastFingersEvidencePriority(a.item) || a.roundIndex - b.roundIndex)
+      .at(0)?.item;
+    const lineupHero = episode.fastFingers
+      .map((round) => round.lineupEvidence)
+      .find(Boolean);
     episode.featuredEvidence =
+      lineupHero ||
+      fastFingersFeatured ||
       episode.evidence.find((item) => item.kind === "fast-result") ||
       episode.evidence.find((item) => item.kind === "fast-board") ||
       episode.evidence.find((item) => item.kind === "lineup") ||
@@ -430,6 +571,7 @@ export default async function () {
     hosts: [],
     questions: [],
     contestantRuns: [],
+    fastFingers: [],
     people: [],
     evidence: [],
     available: false,
@@ -939,5 +1081,7 @@ export default async function () {
     contestantPages: people.flatMap((person) => languages.map((lang) => ({ lang, person }))),
     runPages: catalogRuns.flatMap((run) => languages.map((lang) => ({ lang, run }))),
     topicPages: questionTopics.flatMap((topic) => languages.map((lang) => ({ lang, topic }))),
+    questionAuditByRow: Object.fromEntries([...questionAuditByRow.entries()].map(([index, entry]) => [String(index), entry])),
+    profileAuditByKey,
   };
 }

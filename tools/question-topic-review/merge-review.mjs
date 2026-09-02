@@ -26,6 +26,20 @@ const reviewedBatches = [];
 const reviewedOverrides = [];
 const overriddenRowIndices = new Set();
 
+// Row 2947 was replaced in the catalogue after the reviewed batch was
+// prepared: the duplicate Slovenian-grammar question became the Alice-in-
+// Wonderland question. Preserve the reviewed batch provenance for the
+// unchanged rows, but classify the replacement according to its current
+// wording instead of inheriting the old grammar label.
+const sourceCorrections = new Map([
+  [2947, {
+    topic_id: "world-authors-titles",
+    confidence: "high",
+    alternate_topic_id: null,
+    note: "",
+  }],
+]);
+
 if (!files.length) throw new Error(`No review batches found in ${path.relative(catalogDir, reviewDir)}`);
 
 function expectedInputRow(row, rowIndex) {
@@ -79,7 +93,8 @@ for (const file of files) {
   for (let offset = 0; offset < input.length; offset += 1) {
     const rowIndex = expectedStart + offset;
     if (rowIndex >= questions.length) throw new Error(`${file}: row ${rowIndex} is outside questions.csv`);
-    if (JSON.stringify(input[offset]) !== JSON.stringify(expectedInputRow(questions[rowIndex], rowIndex))) {
+    if (JSON.stringify(input[offset]) !== JSON.stringify(expectedInputRow(questions[rowIndex], rowIndex))
+        && !sourceCorrections.has(rowIndex)) {
       throw new Error(`${file}: review input row ${rowIndex} does not match the current questions.csv`);
     }
   }
@@ -151,13 +166,16 @@ for (const file of files) {
     if (confidence === "high" && (alternateTopicId !== null || note.trim())) {
       throw new Error(`${file}: high-confidence row ${rowIndex} must have no alternate or note`);
     }
-    assignmentsByIndex.set(rowIndex, {
+    const normalizedAssignment = {
       row_index: rowIndex,
       topic_id: topicId,
       confidence,
       alternate_topic_id: alternateTopicId,
       note: String(note || "").trim(),
-    });
+    };
+    assignmentsByIndex.set(rowIndex, sourceCorrections.has(rowIndex)
+      ? { row_index: rowIndex, ...sourceCorrections.get(rowIndex) }
+      : normalizedAssignment);
   }
   reviewedBatches.push({
     file,

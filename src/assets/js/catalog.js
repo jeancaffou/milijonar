@@ -197,15 +197,17 @@
 
     const input = directory.querySelector("[data-directory-input]");
     const roleSelect = directory.querySelector("[data-directory-role]");
+    const sortSelect = directory.querySelector("[data-directory-sort]");
     const count = directory.querySelector("[data-directory-count]");
     const entries = [...directory.querySelectorAll("[data-directory-entry]")];
     const results = directory.querySelector(".people-directory");
-    if (!input || !roleSelect || !count || !entries.length) return;
+    if (!input || !roleSelect || !sortSelect || !count || !entries.length) return;
 
     if (results) {
       results.id ||= "contestant-filter-results";
       input.setAttribute("aria-controls", results.id);
       roleSelect.setAttribute("aria-controls", results.id);
+      sortSelect.setAttribute("aria-controls", results.id);
     }
 
     const params = new URLSearchParams(window.location.search);
@@ -213,12 +215,70 @@
     if ([...roleSelect.options].some((option) => option.value === params.get("role"))) {
       roleSelect.value = params.get("role") || "";
     }
+    if ([...sortSelect.options].some((option) => option.value === params.get("sort"))) {
+      sortSelect.value = params.get("sort") || "name";
+    }
+
+    const sortConfig = {
+      name: { datasetKey: "name", numeric: false, recordKey: "appearances" },
+      appearances: { datasetKey: "appearances", numeric: true, recordKey: "appearances" },
+      hotseat: { datasetKey: "hotseat", numeric: true, recordKey: "hotseat" },
+      winnings: { datasetKey: "winnings", numeric: true, recordKey: "winnings" },
+      questions: { datasetKey: "questions", numeric: true, recordKey: "questions" },
+      furthest: { datasetKey: "furthest", numeric: true, recordKey: "furthest" },
+      fastWins: { datasetKey: "fastWins", numeric: true, recordKey: "fastWins" },
+      fastAppearances: { datasetKey: "fastAppearances", numeric: true, recordKey: "fastAppearances" },
+    };
 
     const searchableEntries = entries.map((entry) => ({
       element: entry,
       roles: new Set((entry.dataset.role || "").trim().split(/\s+/).filter(Boolean)),
       text: normalizeText(entry.dataset.search),
+      name: normalizeText(entry.dataset.name),
+      recordLabel: entry.querySelector("[data-directory-record-label]"),
+      recordValue: entry.querySelector("[data-directory-record-value]"),
+      record: entry.querySelector(".person-record"),
     }));
+
+    function updateRecordDisplay() {
+      const config = sortConfig[sortSelect.value] || sortConfig.name;
+      const recordKey = config.recordKey || "appearances";
+      const labelKey = `record${recordKey.charAt(0).toUpperCase()}${recordKey.slice(1)}Label`;
+      const valueKey = `record${recordKey.charAt(0).toUpperCase()}${recordKey.slice(1)}Value`;
+      searchableEntries.forEach((entry) => {
+        // Keep the selected sort metric as two clean lines. Older generated
+        // markup included a punctuation node after the label; strip it here
+        // as well so a cached page can never render a lone colon between the
+        // label and its value.
+        const label = String(entry.element.dataset[labelKey] || "").replace(/\s*:\s*$/, "");
+        const value = String(entry.element.dataset[valueKey] || "—").replace(/^\s*:\s*/, "");
+        if (entry.recordLabel) entry.recordLabel.textContent = label;
+        if (entry.recordValue) entry.recordValue.textContent = value;
+        const record = entry.record || entry.recordLabel?.closest(".person-record");
+        if (record) {
+          // Older generated pages rendered the label as a text node such as
+          // "Nastopi v Hitrih prstih: ". Remove that punctuation anywhere
+          // inside the record, while leaving the label/value on their two
+          // intended lines.
+          const walker = document.createTreeWalker(record, NodeFilter.SHOW_TEXT);
+          const textNodes = [];
+          while (walker.nextNode()) textNodes.push(walker.currentNode);
+          textNodes.forEach((node) => {
+            node.textContent = node.textContent.replace(/\s*:\s*/g, " ").trim();
+          });
+        }
+      });
+    }
+
+    function sortEntries() {
+      const config = sortConfig[sortSelect.value] || sortConfig.name;
+      const ordered = [...searchableEntries].sort((a, b) => {
+        if (!config.numeric) return a.name.localeCompare(b.name, documentLanguage === "sl" ? "sl" : "en");
+        const difference = Number(b.element.dataset[config.datasetKey] || 0) - Number(a.element.dataset[config.datasetKey] || 0);
+        return difference || a.name.localeCompare(b.name, documentLanguage === "sl" ? "sl" : "en");
+      });
+      if (results) results.append(...ordered.map((entry) => entry.element));
+    }
 
     function applyFilter() {
       const rawQuery = input.value.trim();
@@ -235,13 +295,17 @@
 
       count.textContent = formatCount(visible);
       directory.dataset.hasResults = String(visible > 0);
+      updateRecordDisplay();
+      sortEntries();
       setQueryParameter("q", rawQuery);
       setQueryParameter("role", role);
+      setQueryParameter("sort", sortSelect.value === "name" ? "" : sortSelect.value);
     }
 
     const schedule = scheduleFilter(applyFilter);
     input.addEventListener("input", schedule);
     roleSelect.addEventListener("change", applyFilter);
+    sortSelect.addEventListener("change", applyFilter);
     applyFilter();
   }
 

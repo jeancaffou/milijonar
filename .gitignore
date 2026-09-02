@@ -10,6 +10,7 @@
 __pycache__/
 *.py[cod]
 .DS_Store
+handoff.md
 
 # Only CSV-referenced episode evidence belongs in the web catalogue.
 /work/*

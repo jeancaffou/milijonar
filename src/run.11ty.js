@@ -11,6 +11,7 @@ import {
   questionOutcomeLabel,
   renderQuestionBoard,
 } from "../lib/render.mjs";
+import { selectRunProfileImage } from "../lib/profile-image.mjs";
 
 function compactAnswers(question) {
   return ["A", "B", "C", "D"].map((letter) => {
@@ -124,39 +125,57 @@ export default class RunPage {
     const firstQuestionEvidence = questions
       .map((question) => question.primaryEvidence || question.evidence?.[0])
       .find(Boolean);
-    const heroImage = evidence[0] || firstQuestionEvidence;
+    const person = catalog.personBySlug?.[run.contestantSlug];
+    const logicalRuns = (person?.catalogRunIds || [])
+      .map((id) => catalog.runById?.[id])
+      .filter(Boolean);
+    const selectedHero = selectRunProfileImage(
+      person,
+      catalog.contestantRuns,
+      run,
+      logicalRuns,
+      catalog.episodeByKey,
+      catalog.profileAuditByKey,
+    );
+    const heroImage = selectedHero?.item || firstQuestionEvidence || evidence[0] || null;
+    const sharedEvidence = evidence.filter((item) => item.url !== heroImage?.url);
     const result = runResult(run, lang, c.labels);
     const previousRun = typeof run.previousRun === "string" ? catalog.runById?.[run.previousRun] : run.previousRun;
     const nextRun = typeof run.nextRun === "string" ? catalog.runById?.[run.nextRun] : run.nextRun;
     const runLabel = sl ? "Igra na vročem stolu" : "Hot-seat run";
     const questionCountLabel = questionCountText(questions.length, lang);
+    const initials = run.contestantName
+      .split(/\s+/)
+      .map((part) => part[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase();
+    const heroImageAlt = selectedHero?.source === "contestant-introduction"
+      ? (sl ? `${run.contestantName} med predstavitvijo tekmovalcev` : `${run.contestantName} during the contestant introductions`)
+      : (sl ? `${run.contestantName} med to igro na vročem stolu` : `${run.contestantName} during this hot-seat run`);
 
     const body = `${breadcrumbs(lang, [
       { label: c.nav.contestants, href: pathFor(lang, "contestants") },
       { label: run.contestantName, href: profileHref },
       { label: runLabel },
     ])}
-      <header class="page-hero person-hero">
-        <div class="person-monogram" aria-hidden="true">${escapeHtml(
-          run.contestantName
-            .split(/\s+/)
-            .map((part) => part[0])
-            .slice(0, 2)
-            .join("")
-            .toUpperCase(),
-        )}</div>
-        <div>
-          <p class="eyebrow">${runLabel}</p>
-          <h1>${escapeHtml(run.contestantName)}</h1>
-          <p>${episodeLinks}</p>
-          <p><a class="text-link" href="${profileHref}">${c.labels.viewContestant}</a></p>
+      <header class="page-hero person-hero${heroImage ? " person-hero--with-image" : ""}">
+        <div class="person-hero__intro">
+          ${heroImage ? "" : `<div class="person-monogram" aria-hidden="true">${escapeHtml(initials)}</div>`}
+          <div class="person-hero__copy">
+            <p class="eyebrow">${runLabel}</p>
+            <h1>${escapeHtml(run.contestantName)}</h1>
+            <p>${episodeLinks}</p>
+            <p><a class="text-link" href="${profileHref}">${c.labels.viewContestant}</a></p>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>${c.labels.airingDate}</dt><dd>${dateRange(run.airingDateStart, run.airingDateEnd, lang, c.labels)}</dd></div>
+            <div><dt>${c.labels.questions}</dt><dd>${questions.length}</dd></div>
+            <div><dt>${c.labels.host}</dt><dd>${hosts.length ? escapeHtml(hosts.join(", ")) : c.labels.noData}</dd></div>
+            <div><dt>${c.labels.winnings}</dt><dd>${escapeHtml(result)}</dd></div>
+          </dl>
         </div>
-        <dl class="hero-facts">
-          <div><dt>${c.labels.airingDate}</dt><dd>${dateRange(run.airingDateStart, run.airingDateEnd, lang, c.labels)}</dd></div>
-          <div><dt>${c.labels.questions}</dt><dd>${questions.length}</dd></div>
-          <div><dt>${c.labels.host}</dt><dd>${hosts.length ? escapeHtml(hosts.join(", ")) : c.labels.noData}</dd></div>
-          <div><dt>${c.labels.winnings}</dt><dd>${escapeHtml(result)}</dd></div>
-        </dl>
+        ${heroImage ? `<a class="person-hero__frame" href="${heroImage.url}" target="_blank" rel="noopener" aria-label="${escapeHtml(sl ? `Odpri posnetek: ${run.contestantName}` : `Open image: ${run.contestantName}`)}"><img src="${heroImage.url}" alt="${escapeHtml(heroImageAlt)}" loading="eager"></a>` : ""}
       </header>
 
       ${questions.length ? `<nav class="question-run" aria-label="${sl ? "Vprašanja v tej igri" : "Questions in this run"}">
@@ -172,14 +191,35 @@ export default class RunPage {
           .join("")}</ol>
       </nav>` : ""}
 
-      ${evidence.length ? `<section class="evidence-section"><header class="section-heading"><p class="eyebrow">${sl ? "POSNETKI IGRE" : "RUN IMAGES"}</p><h2>${sl ? "Posnetki skupnega dela" : "Shared-segment images"}</h2><p>${sl ? "Posnetki prikazujejo tekmovalce Hitrih prstov, izid izbora, uporabljene pomoči in končni dobitek, kadar so na voljo." : "The images show the Fastest Finger First contestants, selection result, lifelines and final winnings when available."}</p></header>${evidenceGallery(evidence, lang, `${run.contestantName}; ${runLabel}`)}</section>` : ""}
+      ${sharedEvidence.length ? `<section class="evidence-section"><header class="section-heading"><p class="eyebrow">${sl ? "POSNETKI IGRE" : "RUN IMAGES"}</p><h2>${sl ? "Posnetki skupnega dela" : "Shared-segment images"}</h2><p>${sl ? "Posnetki prikazujejo tekmovalce Hitrih prstov, izid izbora, uporabljene pomoči in končni dobitek, kadar so na voljo." : "The images show the Fastest Finger First contestants, selection result, lifelines and final winnings when available."}</p></header>${evidenceGallery(sharedEvidence, lang, `${run.contestantName}; ${runLabel}`)}</section>` : ""}
 
       ${questions
         .map((question) => {
           const anchor = anchorFor(question);
           const questionEvidence = question.evidence || [];
-          const primaryEvidence = question.primaryEvidence || questionEvidence[0];
-          const supplementalEvidence = questionEvidence.filter((item) => item.url !== primaryEvidence?.url);
+          const primaryEvidence = question.displayPrimaryEvidence || question.primaryEvidence;
+          const supplementalEvidence = Array.isArray(question.displaySupplementalEvidence)
+            ? question.displaySupplementalEvidence
+            : [];
+          const imageHeading = question.displayEvidenceMode === "before-fifty-fifty"
+            ? {
+                eyebrow: c.labels.questionBeforeFiftyFifty,
+                title: c.labels.allFourOptions,
+              }
+            : question.displayEvidenceMode === "complete-board"
+              ? {
+                  eyebrow: c.labels.questionWithAllAnswers,
+                  title: c.labels.allFourOptions,
+                }
+              : question.displayEvidenceMode === "correct-outcome"
+                ? {
+                    eyebrow: c.labels.correctAnswerImage,
+                    title: c.labels.correctAnswer,
+                  }
+                : {
+                    eyebrow: c.labels.questionImage,
+                    title: c.labels.questionImage,
+                  };
           const lifelineKeys = question.lifelineKeys || [];
           const lifelines = lifelineKeys.map((key) => c.lifelineNames[key] || key).join(", ");
           const episode = questionEpisode(question, episodes, catalog);
@@ -211,7 +251,7 @@ export default class RunPage {
               <div><dt>${sl ? "Tema" : "Topic"}</dt><dd>${question.topic ? `<a href="${pathFor(lang, "topic", question.topic.id)}">${escapeHtml(sl ? question.topic.label_sl : question.topic.label_en)}</a>` : c.labels.noData}</dd></div>
             </dl></section>
             ${contextualNotes.map((note) => `<p class="context-note">${escapeHtml(note)}</p>`).join("")}
-            ${primaryEvidence ? `<section class="evidence-section question-primary-evidence"><header class="section-heading"><p class="eyebrow">${sl ? "PRIKAZ PRAVILNEGA ODGOVORA" : "CORRECT-ANSWER IMAGE"}</p><h3>${c.labels.correctAnswer}</h3></header>${evidenceGallery([primaryEvidence], lang, `${code}${code ? ", " : ""}Q${question.questionNumber}; ${run.contestantName}`)}</section>` : ""}
+            ${primaryEvidence ? `<section class="evidence-section question-primary-evidence"><header class="section-heading"><p class="eyebrow">${escapeHtml(imageHeading.eyebrow.toUpperCase())}</p><h3>${escapeHtml(imageHeading.title)}</h3></header>${evidenceGallery([primaryEvidence], lang, `${code}${code ? ", " : ""}Q${question.questionNumber}; ${run.contestantName}`)}</section>` : ""}
             ${supplementalEvidence.length ? `<details class="evidence-disclosure"><summary>${sl ? "Dodatni posnetki" : "Additional images"} (${supplementalEvidence.length})</summary>${evidenceGallery(supplementalEvidence, lang, `${code}${code ? ", " : ""}Q${question.questionNumber}; ${run.contestantName}`)}</details>` : ""}
           </article>`;
         })

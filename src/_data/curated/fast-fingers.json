@@ -1,0 +1,3406 @@
+{
+  "rounds": {
+    "s01e01:1": {
+      "question": "Razvrstite evropske države po velikosti, od največje do najmanjše:",
+      "answers": {
+        "A": "Malta",
+        "B": "Slovenija",
+        "C": "Irska",
+        "D": "San Marino"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e01_frames/s01e01_ff1_options.jpg",
+      "resultEvidence": "work/s01e01_frames/s01e01_ff1_results.jpg",
+      "lineupEvidence": "work/s01e01_frames/s01e01_ff1_lineup.jpg"
+    },
+    "s01e01:2": {
+      "question": "Razvrstite sadje od najlažjega do najtežjega:",
+      "answers": {
+        "A": "kivi",
+        "B": "jagoda",
+        "C": "lubenica",
+        "D": "jabolko"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s01e01_frames/s01e01_ff2_options.jpg",
+      "resultEvidence": "work/s01e01_frames/s01e01_ff2_results.jpg",
+      "lineupEvidence": "work/s01e01_frames/s01e01_ff2_lineup.jpg"
+    },
+    "s01e01:3": {
+      "question": "Razvrstite po abecednem redu zaščitene rože:",
+      "answers": {
+        "A": "velikonočnica",
+        "B": "šmarnica",
+        "C": "planika",
+        "D": "hermelika"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s01e01_frames/s01e01_ff3_options.jpg",
+      "resultEvidence": "work/s01e01_frames/s01e01_ff3_results.jpg",
+      "lineupEvidence": "work/s01e01_frames/s01e01_ff3_lineup.jpg"
+    },
+    "s01e02:1": {
+      "question": "Razvrstite kratice avtomobilskih oznak držav po abecednem redu:",
+      "answers": {
+        "A": "P",
+        "B": "N",
+        "C": "D",
+        "D": "FL"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s01e02_frames/s01e02_ff1_options.jpg",
+      "resultEvidence": "work/s01e02_frames/s01e02_ff1_results.jpg",
+      "lineupEvidence": "work/s01e02_frames/s01e02_ff1_lineup.jpg"
+    },
+    "s01e02:2": {
+      "question": "Razvrstite besede, da dobite naslov znane pesmi:",
+      "answers": {
+        "A": "Kje",
+        "B": "tiste",
+        "C": "stezice",
+        "D": "so"
+      },
+      "correctOrder": [
+        "A",
+        "D",
+        "B",
+        "C"
+      ],
+      "boardEvidence": "work/s01e02_frames/s01e02_ff2_options.jpg",
+      "resultEvidence": "work/s01e02_frames/s01e02_ff2_results.jpg",
+      "lineupEvidence": "work/s01e02_frames/s01e02_ff2_lineup.jpg"
+    },
+    "s01e03:1": {
+      "question": "Razvrstite socialna omrežja po abecednem redu:",
+      "answers": {
+        "A": "Twitter",
+        "B": "Facebook",
+        "C": "Flickr",
+        "D": "Instagram"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s01e03_frames/s01e03_ff1_options.jpg",
+      "resultEvidence": "work/s01e03_frames/s01e03_ff1_results.jpg",
+      "lineupEvidence": "work/s01e03_frames/s01e03_ff1_lineup.jpg"
+    },
+    "s01e03:2": {
+      "question": "Razvrstite praznike, kot si sledijo skozi leto:",
+      "answers": {
+        "A": "novo leto",
+        "B": "dan reformacije",
+        "C": "praznik dela",
+        "D": "Marijino vnebovzetje"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e03_frames/s01e03_ff2_options.jpg",
+      "resultEvidence": "work/s01e03_frames/s01e03_ff2_results.jpg",
+      "lineupEvidence": "work/s01e03_frames/s01e03_ff2_lineup.jpg"
+    },
+    "s01e04:1": {
+      "question": "Razvrstite enote za merjenje tekočine od največje do najmanjše:",
+      "answers": {
+        "A": "centiliter",
+        "B": "liter",
+        "C": "hektoliter",
+        "D": "mililiter"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e04_frames/s01e04_ff1_options.jpg",
+      "resultEvidence": "work/s01e04_frames/s01e04_ff1_results.jpg",
+      "lineupEvidence": "work/s01e04_frames/s01e04_ff1_lineup.jpg"
+    },
+    "s01e04:2": {
+      "question": "Razvrstite ptice po velikosti od največje do najmanjše:",
+      "answers": {
+        "A": "kos",
+        "B": "sova",
+        "C": "vrabec",
+        "D": "orel"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e04_frames/s01e04_ff2_options.jpg",
+      "resultEvidence": "work/s01e04_frames/s01e04_ff2_results.jpg",
+      "lineupEvidence": "work/s01e04_frames/s01e04_ff2_lineup.jpg"
+    },
+    "s01e05:1": {
+      "question": "Razvrstite bivše slovenske alpske smučarke od najmlajše do najstarejše?",
+      "answers": {
+        "A": "Mateja Svet",
+        "B": "Tina Maze",
+        "C": "Urška Hrovat",
+        "D": "Anja Zavadlav"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e05_frames/s01e05_ff1_options.jpg",
+      "resultEvidence": "work/s01e05_frames/s01e05_ff1_results.jpg",
+      "lineupEvidence": "work/s01e05_frames/s01e05_ff1_lineup.jpg"
+    },
+    "s01e05:2": {
+      "question": "Razvrstite slovenske avtomobilske registrske oznake po abecedi.",
+      "answers": {
+        "A": "KP",
+        "B": "MB",
+        "C": "LJ",
+        "D": "CE"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s01e05_frames/s01e05_ff2_options.jpg",
+      "resultEvidence": "work/s01e05_frames/s01e05_ff2_results.jpg",
+      "lineupEvidence": "work/s01e05_frames/s01e05_ff2_lineup.jpg"
+    },
+    "s01e06:1": {
+      "question": "Razvrstite slovenska mesta od vzhoda proti zahodu:",
+      "answers": {
+        "A": "Ajdovščina",
+        "B": "Kamnik",
+        "C": "Žalec",
+        "D": "Lendava"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s01e06_frames/s01e06_ff1_options.jpg",
+      "resultEvidence": "work/s01e06_frames/s01e06_ff1_results.jpg",
+      "lineupEvidence": "work/s01e06_frames/s01e06_ff1_lineup.jpg"
+    },
+    "s01e06:2": {
+      "question": "Razvrstite slovenske filme od najstarejšega do najmlajšega:",
+      "answers": {
+        "A": "Vdovstvo Karoline Žašler",
+        "B": "Vesna",
+        "C": "Babica gre na jug",
+        "D": "Ne bom več luzerka"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "C",
+        "D"
+      ],
+      "boardEvidence": "work/s01e06_frames/s01e06_ff2_options.jpg",
+      "resultEvidence": "work/s01e06_frames/s01e06_ff2_results.jpg",
+      "lineupEvidence": "work/s01e06_frames/s01e06_ff2_lineup.jpg"
+    },
+    "s01e07:1": {
+      "question": "Razvrstite znane skladatelje po abecednem vrstnem redu:",
+      "answers": {
+        "A": "Salieri",
+        "B": "Rubinstein",
+        "C": "Rosetti",
+        "D": "Vivaldi"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e07_frames/s01e07_ff1_options.jpg",
+      "resultEvidence": "work/s01e07_frames/s01e07_ff1_results.jpg",
+      "lineupEvidence": "work/s01e07_frames/s01e07_ff1_winner.jpg"
+    },
+    "s01e07:2": {
+      "question": "Razvrstite srednjeameriške države od severa proti jugu:",
+      "answers": {
+        "A": "Nikaragva",
+        "B": "Gvatemala",
+        "C": "Panama",
+        "D": "Kostarika"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s01e07_frames/s01e07_ff2_options.jpg",
+      "resultEvidence": "work/s01e07_frames/s01e07_ff2_results.jpg",
+      "lineupEvidence": "work/s01e07_frames/s01e07_ff2_lineup.jpg"
+    },
+    "s01e07:3": {
+      "question": "Razvrstite slovenska mesta po nadmorski višini, od najnižje do najvišje ležečega:",
+      "answers": {
+        "A": "Murska Sobota",
+        "B": "Celje",
+        "C": "Koper",
+        "D": "Ljubljana"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s01e07_frames/s01e07_ff3_options.jpg",
+      "resultEvidence": "work/s01e07_frames/s01e07_ff3_results.jpg",
+      "lineupEvidence": "work/s01e07_frames/s01e07_ff3_winner.jpg"
+    },
+    "s01e08:1": {
+      "question": "Razvrstite ptičja jajca po velikosti, od najmanjšega do največjega:",
+      "answers": {
+        "A": "nojevo",
+        "B": "kokošje",
+        "C": "prepeličje",
+        "D": "gosje"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s01e08_frames/s01e08_ff1_options.jpg",
+      "resultEvidence": "work/s01e08_frames/s01e08_ff1_results.jpg",
+      "lineupEvidence": "work/s01e08_frames/s01e08_ff1_lineup.jpg"
+    },
+    "s01e09:1": {
+      "question": "Razvrstite evropske narodne parke po abecednem redu:",
+      "answers": {
+        "A": "Risnjak",
+        "B": "Teide",
+        "C": "Kolovesi",
+        "D": "Abruzzo"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e09_frames/s01e09_ff1_options.jpg",
+      "resultEvidence": "work/s01e09_frames/s01e09_ff1_order.jpg",
+      "lineupEvidence": "work/s01e09_frames/s01e09_ff1_results.jpg"
+    },
+    "s01e09:2": {
+      "question": "Razvrstite slovenske dvatisočake po abecednem redu:",
+      "answers": {
+        "A": "Jalovec",
+        "B": "Kanjavec",
+        "C": "Grintovec",
+        "D": "Rjavec"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s01e09_frames/s01e09_ff2_options.jpg",
+      "resultEvidence": "work/s01e09_frames/s01e09_ff2_order.jpg",
+      "lineupEvidence": "work/s01e09_frames/s01e09_ff2_results.jpg"
+    },
+    "s01e10:1": {
+      "question": "Razvrstite besede tako, da dobite znani pregovor:",
+      "answers": {
+        "A": "kilavo",
+        "B": "babic",
+        "C": "veliko",
+        "D": "dete"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e10_frames/s01e10_ff1_options.jpg",
+      "resultEvidence": "work/s01e10_frames/s01e10_ff1_results.jpg",
+      "lineupEvidence": "work/s01e10_frames/s01e10_ff1_lineup.jpg"
+    },
+    "s01e10:2": {
+      "question": "Razvrstite slovenske reke po abecednem redu:",
+      "answers": {
+        "A": "Soča",
+        "B": "Sava",
+        "C": "Sotla",
+        "D": "Savinja"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e10_frames/s01e10_ff2_options.jpg",
+      "resultEvidence": "work/s01e10_frames/s01e10_ff2_results.jpg",
+      "lineupEvidence": "work/s01e10_frames/s01e10_ff2_lineup.jpg"
+    },
+    "s01e11:1": {
+      "question": "Razvrstite živali od največje do najmanjše:",
+      "answers": {
+        "A": "mačka",
+        "B": "bolha",
+        "C": "koza",
+        "D": "žirafa"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e11_frames/s01e11_ff1_options.jpg",
+      "resultEvidence": "work/s01e11_frames/s01e11_ff1_order.jpg",
+      "lineupEvidence": "work/s01e11_frames/s01e11_ff1_lineup.jpg"
+    },
+    "s01e11:2": {
+      "question": "Razvrstite celine od največje do najmanjše.",
+      "answers": {
+        "A": "Afrika",
+        "B": "Južna Amerika",
+        "C": "Evropa",
+        "D": "Avstralija"
+      },
+      "correctOrder": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "boardEvidence": "work/s01e11_frames/s01e11_ff2_options.jpg",
+      "resultEvidence": "work/s01e11_frames/s01e11_ff2_order.jpg",
+      "lineupEvidence": "work/s01e11_frames/s01e11_ff2_lineup.jpg"
+    },
+    "s01e12:1": {
+      "question": "Razvrstite slovenske športne junake po starosti od najstarejšega do najmlajšega:",
+      "answers": {
+        "A": "Peter Prevc",
+        "B": "Luka Dončić",
+        "C": "Anže Kopitar",
+        "D": "Iztok Čop"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e12_frames/s01e12_ff1_options.jpg",
+      "resultEvidence": "work/s01e12_frames/s01e12_ff1_order.jpg",
+      "lineupEvidence": "work/s01e12_frames/s01e12_ff1_lineup.jpg"
+    },
+    "s01e12:2": {
+      "question": "Razvrstite mesta po oddaljenosti od Ljubljane, od najbližjega do najbolj oddaljenega:",
+      "answers": {
+        "A": "Beograd",
+        "B": "Zagreb",
+        "C": "Skopje",
+        "D": "Banja Luka"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e12_frames/s01e12_ff2_options.jpg",
+      "resultEvidence": "work/s01e12_frames/s01e12_ff2_order.jpg",
+      "lineupEvidence": "work/s01e12_frames/s01e12_ff2_lineup.jpg"
+    },
+    "s01e12:3": {
+      "question": "Razvrstite besede tako, da dobite slovenski pregovor:",
+      "answers": {
+        "A": "brez",
+        "B": "jela",
+        "C": "dela",
+        "D": "ni"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e12_frames/s01e12_ff3_options.jpg",
+      "resultEvidence": "work/s01e12_frames/s01e12_ff3_order.jpg",
+      "lineupEvidence": "work/s01e12_frames/s01e12_ff3_lineup.jpg"
+    },
+    "s01e13:1": {
+      "question": "Skoke pri atletiki za moške razvrstite po dolžini svetovnih rekordov, od največje do najmanjše razdalje:",
+      "answers": {
+        "A": "troskok",
+        "B": "skok ob palici",
+        "C": "skok v daljino",
+        "D": "skok v višino"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s01e13_frames/s01e13_ff1_options.jpg",
+      "resultEvidence": "work/s01e13_frames/s01e13_ff1_order.jpg",
+      "lineupEvidence": "work/s01e13_frames/s01e13_ff1_lineup.jpg"
+    },
+    "s01e14:1": {
+      "question": "Razvrstite države od najmanjše do največje:",
+      "answers": {
+        "A": "Španija",
+        "B": "Alžirija",
+        "C": "Belgija",
+        "D": "Andora"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e14_frames/s01e14_ff1_options.jpg",
+      "resultEvidence": "work/s01e14_frames/s01e14_ff1_order.jpg",
+      "lineupEvidence": "work/s01e14_frames/s01e14_ff1_lineup.jpg"
+    },
+    "s01e14:2": {
+      "question": "Razvrstite enote za merjenje mase od najtežje do najlažje:",
+      "answers": {
+        "A": "gram",
+        "B": "dekagram",
+        "C": "miligram",
+        "D": "kilogram"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e14_frames/s01e14_ff2_options.jpg",
+      "resultEvidence": "work/s01e14_frames/s01e14_ff2_order.jpg",
+      "lineupEvidence": "work/s01e14_frames/s01e14_ff2_lineup.jpg"
+    },
+    "s01e15:1": {
+      "question": "Razvrstite evropske prestolnice po velikosti, od največje do najmanjše:",
+      "answers": {
+        "A": "Moskva",
+        "B": "Rim",
+        "C": "Dunaj",
+        "D": "London"
+      },
+      "correctOrder": [
+        "A",
+        "D",
+        "B",
+        "C"
+      ],
+      "boardEvidence": "work/s01e15_frames/s01e15_ff1_options.jpg",
+      "resultEvidence": "work/s01e15_frames/s01e15_ff1_order.jpg",
+      "lineupEvidence": "work/s01e15_frames/s01e15_ff1_lineup.jpg"
+    },
+    "s01e15:2": {
+      "question": "Razvrstite imena po abecednem redu:",
+      "answers": {
+        "A": "Mojca",
+        "B": "Manca",
+        "C": "Monika",
+        "D": "Manja"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e15_frames/s01e15_ff2_options.jpg",
+      "resultEvidence": "work/s01e15_frames/s01e15_ff2_order.jpg",
+      "lineupEvidence": "work/s01e15_frames/s01e15_ff2_lineup.jpg"
+    },
+    "s01e16:1": {
+      "question": "Razvrstite vrste dreves po abecednem redu:",
+      "answers": {
+        "A": "lipa",
+        "B": "hrast",
+        "C": "gaber",
+        "D": "smreka"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e16_frames/s01e16_ff1_options.jpg",
+      "resultEvidence": "work/s01e16_frames/s01e16_ff1_order.jpg",
+      "lineupEvidence": "work/s01e16_frames/s01e16_ff1_lineup.jpg"
+    },
+    "s01e17:1": {
+      "question": "Smiselno razvrstite naslednje besede:",
+      "answers": {
+        "A": "rep",
+        "B": "raci",
+        "C": "perica",
+        "D": "reže"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e17_frames/s01e17_ff1_options.jpg",
+      "resultEvidence": "work/s01e17_frames/s01e17_ff1_order.jpg",
+      "lineupEvidence": "work/s01e17_frames/s01e17_ff1_lineup.jpg"
+    },
+    "s01e17:2": {
+      "question": "Razvrstite sosednje republike Slovenije po dolžini skupne meje, od najkrajše do najdaljše:",
+      "answers": {
+        "A": "Avstrija",
+        "B": "Madžarska",
+        "C": "Hrvaška",
+        "D": "Italija"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e17_frames/s01e17_ff2_options.jpg",
+      "resultEvidence": "work/s01e17_frames/s01e17_ff2_order.jpg",
+      "lineupEvidence": "work/s01e17_frames/s01e17_ff2_lineup.jpg"
+    },
+    "s01e18:1": {
+      "question": "Razvrstite mesta od vzhoda proti zahodu:",
+      "answers": {
+        "A": "Pariz",
+        "B": "Budimpešta",
+        "C": "Porto",
+        "D": "Dunaj"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e18_frames/s01e18_ff1_options.jpg",
+      "resultEvidence": "work/s01e18_frames/s01e18_ff1_order.jpg",
+      "lineupEvidence": "work/s01e18_frames/s01e18_ff1_lineup.jpg"
+    },
+    "s01e19:1": {
+      "question": "Razvrstite po abecedi šahovske figure:",
+      "answers": {
+        "A": "kmet",
+        "B": "kraljica",
+        "C": "konj",
+        "D": "kralj"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e19_frames/s01e19_ff1_options.jpg",
+      "resultEvidence": "work/s01e19_frames/s01e19_ff1_order.jpg",
+      "lineupEvidence": "work/s01e19_frames/s01e19_ff1_lineup.jpg"
+    },
+    "s01e19:2": {
+      "question": "Razvrstite domače živali od najtežje do najlažje:",
+      "answers": {
+        "A": "zajec",
+        "B": "osel",
+        "C": "krava",
+        "D": "piščanec"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e19_frames/s01e19_ff2_options.jpg",
+      "resultEvidence": "work/s01e19_frames/s01e19_ff2_order.jpg",
+      "lineupEvidence": "work/s01e19_frames/s01e19_ff2_lineup.jpg"
+    },
+    "s01e19:3": {
+      "question": "Razvrstite zgodovinska obdobja od najmlajšega do najstarejšega:",
+      "answers": {
+        "A": "kamena doba",
+        "B": "srednji vek",
+        "C": "antika",
+        "D": "sodobnost"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s01e19_frames/s01e19_ff3_options.jpg",
+      "resultEvidence": "work/s01e19_frames/s01e19_ff3_order.jpg",
+      "lineupEvidence": "work/s01e19_frames/s01e19_ff3_lineup.jpg"
+    },
+    "s01e20:1": {
+      "question": "Razvrstite dirkališča Formule 1 od vzhoda proti zahodu:",
+      "answers": {
+        "A": "Barcelona",
+        "B": "Baku",
+        "C": "Montreal",
+        "D": "Melbourne"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e20_frames/s01e20_ff1_options.jpg",
+      "resultEvidence": "work/s01e20_frames/s01e20_ff1_order.jpg",
+      "lineupEvidence": "work/s01e20_frames/s01e20_ff1_lineup.jpg"
+    },
+    "s01e21:1": {
+      "question": "Razvrstite znane slovenske Janeze po abecednem vrstnem redu:",
+      "answers": {
+        "A": "Škof",
+        "B": "Janša",
+        "C": "Bončina",
+        "D": "Jalen"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s01e21_frames/s01e21_ff1_options.jpg",
+      "resultEvidence": "work/s01e21_frames/s01e21_ff1_order.jpg",
+      "lineupEvidence": "work/s01e21_frames/s01e21_ff1_lineup.jpg"
+    },
+    "s01e21:2": {
+      "question": "Razvrstite častniške čine slovenske vojske od najnižjega do najvišjega:",
+      "answers": {
+        "A": "polkovnik",
+        "B": "major",
+        "C": "stotnik",
+        "D": "podpolkovnik"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s01e21_frames/s01e21_ff2_options.jpg",
+      "resultEvidence": "work/s01e21_frames/s01e21_ff2_order.jpg",
+      "lineupEvidence": "work/s01e21_frames/s01e21_ff2_lineup.jpg"
+    },
+    "s01e21:3": {
+      "question": "Razvrstite človeške zobe od enice do osmice:",
+      "answers": {
+        "A": "sekalec",
+        "B": "kočnik",
+        "C": "ličnik",
+        "D": "podočnik"
+      },
+      "correctOrder": [
+        "A",
+        "D",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s01e21_frames/s01e21_ff3_options.jpg",
+      "resultEvidence": "work/s01e21_frames/s01e21_ff3_order.jpg",
+      "lineupEvidence": "work/s01e21_frames/s01e21_ff3_lineup.jpg"
+    },
+    "s01e22:1": {
+      "question": "Po abecednem vrstnem redu razvrstite letne čase.",
+      "answers": {
+        "A": "jesen",
+        "B": "zima",
+        "C": "poletje",
+        "D": "pomlad"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e22_frames/s01e22_ff1_order.jpg",
+      "resultEvidence": "work/s01e22_frames/s01e22_ff1_order.jpg",
+      "lineupEvidence": "work/s01e22_frames/s01e22_ff1_lineup.jpg"
+    },
+    "s01e22:2": {
+      "question": "Razvrstite slovenske smučarske priimke po abecednem vrstnem redu.",
+      "answers": {
+        "A": "Petrka",
+        "B": "Petek",
+        "C": "Pavlovčič",
+        "D": "Prevc"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e22_frames/s01e22_ff2_order.jpg",
+      "resultEvidence": "work/s01e22_frames/s01e22_ff2_order.jpg",
+      "lineupEvidence": "work/s01e22_frames/s01e22_ff2_winner.jpg"
+    },
+    "s01e23:1": {
+      "question": "Razvrstite ameriške predsednike tako, kot so si sledili njihovi mandati.",
+      "answers": {
+        "A": "Kennedy",
+        "B": "Roosevelt",
+        "C": "Eisenhower",
+        "D": "Truman"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s01e23_frames/s01e23_luka_ff_order_audited.jpg",
+      "resultEvidence": "work/s01e23_frames/s01e23_luka_ff_order_audited.jpg",
+      "lineupEvidence": "work/s01e23_frames/s01e23_luka_ff_lineup_audited.jpg"
+    },
+    "s01e23:2": {
+      "question": "Razvrstite kraje, kot si sledijo od Ljubljane do Portoroža.",
+      "answers": {
+        "A": "Logatec",
+        "B": "Vrhnika",
+        "C": "Sežana",
+        "D": "Postojna"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s01e23_frames/s01e23_neza_ff_order_audited.jpg",
+      "resultEvidence": "work/s01e23_frames/s01e23_neza_ff_order_audited.jpg",
+      "lineupEvidence": "work/s01e23_frames/s01e23_neza_ff_lineup_audited.jpg"
+    },
+    "s01e24:1": {
+      "question": "Po abecednem vrstnem redu razvrstite starogrške filozofe.",
+      "answers": {
+        "A": "Protagora",
+        "B": "Pitagora",
+        "C": "Platon",
+        "D": "Plotin"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s01e24_frames/s01e24_simon_ff_order_audited.jpg",
+      "resultEvidence": "work/s01e24_frames/s01e24_simon_ff_order_audited.jpg",
+      "lineupEvidence": "work/s01e24_frames/s01e24_simon_ff_lineup_audited.jpg"
+    },
+    "s01e25:1": {
+      "question": "Kako si sledijo meseci v letu:",
+      "answers": {
+        "A": "maj",
+        "B": "marec",
+        "C": "november",
+        "D": "avgust"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s01e25_frames/s01e25_ff_order_audited.jpg",
+      "resultEvidence": "work/s01e25_frames/s01e25_ff_order_audited.jpg",
+      "lineupEvidence": "work/s01e25_frames/s01e25_ff_lineup_audited.jpg"
+    },
+    "s01e26:1": {
+      "question": "Smiselno razvrstite besede v izštevanki:",
+      "answers": {
+        "A": "morju",
+        "B": "kit",
+        "C": "plava",
+        "D": "po"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s01e26_frames/s01e26_ff1_order_audited.jpg",
+      "resultEvidence": "work/s01e26_frames/s01e26_ff1_order_audited.jpg",
+      "lineupEvidence": "work/s01e26_frames/s01e26_ff1_lineup_audited.jpg"
+    },
+    "s01e26:2": {
+      "question": "Priimke avtorjev zbirke Pesmi štirih razvrstite po abecedi:",
+      "answers": {
+        "A": "Menart",
+        "B": "Zlobec",
+        "C": "Kovič",
+        "D": "Pavček"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e26_frames/s01e26_ff2_order_audited.jpg",
+      "resultEvidence": "work/s01e26_frames/s01e26_ff2_order_audited.jpg",
+      "lineupEvidence": "work/s01e26_frames/s01e26_ff2_lineup_audited.jpg"
+    },
+    "s01e27:1": {
+      "question": "Razvrstite ljubljanske trge po abecednem vrstnem redu:",
+      "answers": {
+        "A": "Kongresni trg",
+        "B": "Stari trg",
+        "C": "Ribji trg",
+        "D": "Novi trg"
+      },
+      "correctOrder": [
+        "A",
+        "D",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s01e27_frames/s01e27_ff1_options_audited.jpg",
+      "resultEvidence": "work/s01e27_frames/s01e27_ff1_order_audited.jpg",
+      "lineupEvidence": "work/s01e27_frames/s01e27_ff1_lineup_audited.jpg"
+    },
+    "s01e27:2": {
+      "question": "Razvrstite slovenske športnike po starosti od najmlajšega do najstarejšega:",
+      "answers": {
+        "A": "Peter Prevc",
+        "B": "Zlatko Zahovič",
+        "C": "Luka Dončić",
+        "D": "Jakov Fak"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e27_frames/s01e27_ff2_options_audited.jpg",
+      "resultEvidence": "work/s01e27_frames/s01e27_ff2_order_audited.jpg",
+      "lineupEvidence": "work/s01e27_frames/s01e27_ff2_lineup_audited.jpg"
+    },
+    "s01e28:1": {
+      "question": "Razvrstite potice po abecednem vrstnem redu:",
+      "answers": {
+        "A": "orehova potica",
+        "B": "potratna potica",
+        "C": "makova potica",
+        "D": "pehtranova potica"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e28_frames/s01e28_ff1_options.jpg",
+      "resultEvidence": "work/s01e28_frames/s01e28_ff1_order.jpg",
+      "lineupEvidence": "work/s01e28_frames/s01e28_ff1_lineup.jpg"
+    },
+    "s01e29:1": {
+      "question": "Smiselno razvrstite besede v otroški izštevanki:",
+      "answers": {
+        "A": "kovač",
+        "B": "kuje",
+        "C": "en",
+        "D": "konja"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e29_frames/s01e29_ff1_options.jpg",
+      "resultEvidence": "work/s01e29_frames/s01e29_ff1_order.jpg",
+      "lineupEvidence": "work/s01e29_frames/s01e29_ff1_lineup.jpg"
+    },
+    "s01e29:2": {
+      "question": "Razvrstite slovenska jezera od največjega do najmanjšega:",
+      "answers": {
+        "A": "Zbiljsko",
+        "B": "Bohinjsko",
+        "C": "Bloško",
+        "D": "Blejsko"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e29_frames/s01e29_ff2_options.jpg",
+      "resultEvidence": "work/s01e29_frames/s01e29_ff2_order.jpg",
+      "lineupEvidence": "work/s01e29_frames/s01e29_ff2_lineup.jpg"
+    },
+    "s01e29:3": {
+      "question": "Uredite po abecedi slovenske reke:",
+      "answers": {
+        "A": "Soča",
+        "B": "Sava",
+        "C": "Sora",
+        "D": "Savinja"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e29_frames/s01e29_ff3_options.jpg",
+      "resultEvidence": "work/s01e29_frames/s01e29_ff3_order.jpg",
+      "lineupEvidence": "work/s01e29_frames/s01e29_ff3_lineup.jpg"
+    },
+    "s01e30:1": {
+      "question": "Razvrstite prevozna sredstva od najlažjega do najtežjega:",
+      "answers": {
+        "A": "avto",
+        "B": "skiro",
+        "C": "kolo",
+        "D": "tovornjak"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e30_frames/s01e30_ff1_options.jpg",
+      "resultEvidence": "work/s01e30_frames/s01e30_ff1_order.jpg",
+      "lineupEvidence": "work/s01e30_frames/s01e30_ff1_lineup.jpg"
+    },
+    "s01e30:2": {
+      "question": "Razvrstite države od severa proti jugu:",
+      "answers": {
+        "A": "Brazilija",
+        "B": "Honduras",
+        "C": "Argentina",
+        "D": "Kanada"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e30_frames/s01e30_ff2_options.jpg",
+      "resultEvidence": "work/s01e30_frames/s01e30_ff2_order.jpg",
+      "lineupEvidence": "work/s01e30_frames/s01e30_ff2_lineup.jpg"
+    },
+    "s01e31:1": {
+      "question": "Razvrstite mednarodne merske enote za oblačila od najmanjše do največje:",
+      "answers": {
+        "A": "M",
+        "B": "S",
+        "C": "XL",
+        "D": "L"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s01e31_frames/s01e31_ff1_options.jpg",
+      "resultEvidence": "work/s01e31_frames/s01e31_ff1_order.jpg",
+      "lineupEvidence": "work/s01e31_frames/s01e31_ff1_lineup.jpg"
+    },
+    "s01e32:1": {
+      "question": "Razvrstite pravljice bratov Grimm po abecednem vrstnem redu:",
+      "answers": {
+        "A": "Zlata goska",
+        "B": "Sneguljčica in sedem palčkov",
+        "C": "Janko in Metka",
+        "D": "Pogumni krojaček"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s01e32_frames/s01e32_ff1_options.jpg",
+      "resultEvidence": "work/s01e32_frames/s01e32_ff1_order.jpg",
+      "lineupEvidence": "work/s01e32_frames/s01e32_ff1_lineup.jpg"
+    },
+    "s01e32:2": {
+      "question": "Razvrstite francoske karte po abecednem vrstnem redu:",
+      "answers": {
+        "A": "križ",
+        "B": "pik",
+        "C": "srce",
+        "D": "karo"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "boardEvidence": "work/s01e32_frames/s01e32_ff2_options.jpg",
+      "resultEvidence": "work/s01e32_frames/s01e32_ff2_order.jpg",
+      "lineupEvidence": "work/s01e32_frames/s01e32_ff2_lineup.jpg"
+    },
+    "s01e33:1": {
+      "question": "Razvrstite slovenske občine po številu prebivalcev od najmanjše do največje:",
+      "answers": {
+        "A": "Maribor",
+        "B": "Ljubljana",
+        "C": "Vrhnika",
+        "D": "Velenje"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e33_frames/s01e33_ff1_options.jpg",
+      "resultEvidence": "work/s01e33_frames/s01e33_ff1_order.jpg",
+      "lineupEvidence": "work/s01e33_frames/s01e33_ff1_lineup.jpg"
+    },
+    "s01e34:1": {
+      "question": "Po abecednem vrstnem redu razvrstite štiri elemente:",
+      "answers": {
+        "A": "voda",
+        "B": "ogenj",
+        "C": "zrak",
+        "D": "zemlja"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s01e34_frames/s01e34_ff1_options.jpg",
+      "resultEvidence": "work/s01e34_frames/s01e34_ff1_order.jpg",
+      "lineupEvidence": "work/s01e34_frames/s01e34_ff1_lineup.jpg"
+    },
+    "s01e34:2": {
+      "question": "Razvrstite vojaške formacije po velikosti od najmanjše do največje:",
+      "answers": {
+        "A": "korpus",
+        "B": "armada",
+        "C": "divizija",
+        "D": "brigada"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e34_frames/s01e34_ff2_options.jpg",
+      "resultEvidence": "work/s01e34_frames/s01e34_ff2_order.jpg",
+      "lineupEvidence": "work/s01e34_frames/s01e34_ff2_lineup.jpg"
+    },
+    "s01e35:1": {
+      "question": "Po abecednem vrstnem redu razvrstite priljubljene sladolede.",
+      "answers": {
+        "A": "lonček",
+        "B": "žogica",
+        "C": "lučka",
+        "D": "kornet"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s01e35_frames/s01e35_ff1_options.jpg",
+      "resultEvidence": "work/s01e35_frames/s01e35_ff1_order.jpg",
+      "lineupEvidence": "work/s01e35_frames/s01e35_ff1_lineup.jpg"
+    },
+    "s01e35:2": {
+      "question": "Razvrstite planete po velikosti, od najmanjšega do največjega:",
+      "answers": {
+        "A": "Neptun",
+        "B": "Mars",
+        "C": "Merkur",
+        "D": "Zemlja"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s01e35_frames/s01e35_ff2_options.jpg",
+      "resultEvidence": "work/s01e35_frames/s01e35_ff2_order.jpg",
+      "lineupEvidence": "work/s01e35_frames/s01e35_ff2_lineup.jpg"
+    },
+    "s01e36:1": {
+      "question": "Razvrstite kratice slovenskih strank po abecednem vrstnem redu:",
+      "answers": {
+        "A": "SMC",
+        "B": "SDS",
+        "C": "SLS",
+        "D": "SNS"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e36_frames/s01e36_ff1_options_000858.jpg",
+      "resultEvidence": "work/s01e36_frames/s01e36_ff1_order_000920.jpg",
+      "lineupEvidence": "work/s01e36_frames/s01e36_ff1_lineup.jpg"
+    },
+    "s01e36:2": {
+      "question": "Razvrstite države glede na leto pridružitve Evropski uniji od najstarejše do najmlajše:",
+      "answers": {
+        "A": "Švedska",
+        "B": "Romunija",
+        "C": "Hrvaška",
+        "D": "Slovenija"
+      },
+      "correctOrder": [
+        "A",
+        "D",
+        "B",
+        "C"
+      ],
+      "boardEvidence": "work/s01e36_frames/s01e36_ff2_options_002534.jpg",
+      "resultEvidence": "work/s01e36_frames/s01e36_ff2_order_002558.jpg",
+      "lineupEvidence": "work/s01e36_frames/s01e36_ff2_lineup.jpg"
+    },
+    "s01e36:3": {
+      "question": "Razvrstite ameriške predsednike po kronološkem vrstnem redu njihovega predsedovanja:",
+      "answers": {
+        "A": "George Washington",
+        "B": "Donald Trump",
+        "C": "Bill Clinton",
+        "D": "Ronald Reagan"
+      },
+      "correctOrder": [
+        "A",
+        "D",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s01e36_frames/s01e36_ff3_options_004409.jpg",
+      "resultEvidence": "work/s01e36_frames/s01e36_ff3_order_004430.jpg",
+      "lineupEvidence": "work/s01e36_frames/s01e36_ff3_lineup.jpg"
+    },
+    "s01e37:1": {
+      "question": "Razporedite naštete objekte po velikosti, od najnižjega do najvišjega:",
+      "answers": {
+        "A": "oddajnik Krvavec",
+        "B": "Ljubljanski Nebotičnik",
+        "C": "trboveljski dimnik",
+        "D": "stolp Vinarium"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e37_frames/s01e37_ff1_options_003052.jpg",
+      "resultEvidence": "work/s01e37_frames/s01e37_ff1_order_003118.jpg",
+      "lineupEvidence": "work/s01e37_frames/s01e37_ff1_lineup.jpg"
+    },
+    "s01e37:2": {
+      "question": "Razvrstite po abecednem vrstnem redu naslednje veletoke:",
+      "answers": {
+        "A": "Orinoko",
+        "B": "Niger",
+        "C": "Mekong",
+        "D": "Jangce"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s01e37_frames/s01e37_ff2_options_003201.jpg",
+      "resultEvidence": "work/s01e37_frames/s01e37_ff2_order_003222.jpg",
+      "lineupEvidence": "work/s01e37_frames/s01e37_ff2_lineup.jpg"
+    },
+    "s01e38:1": {
+      "question": "V smeri toka razvrstite prestolnice, skozi katere teče reka Donava:",
+      "answers": {
+        "A": "Beograd",
+        "B": "Budimpešta",
+        "C": "Bratislava",
+        "D": "Dunaj"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s01e38_frames/s01e38_ff1_options.jpg",
+      "resultEvidence": "work/s01e38_frames/s01e38_ff1_order.jpg",
+      "lineupEvidence": "work/s01e38_frames/s01e38_ff1_lineup.jpg"
+    },
+    "s01e38:2": {
+      "question": "Razvrstite besede od najkrajše do najdaljše:",
+      "answers": {
+        "A": "pomlad",
+        "B": "poletje",
+        "C": "jesen",
+        "D": "zima"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e38_frames/s01e38_ff2_options.jpg",
+      "resultEvidence": "work/s01e38_frames/s01e38_ff2_order.jpg",
+      "lineupEvidence": "work/s01e38_frames/s01e38_ff2_lineup.jpg"
+    },
+    "s01e39:1": {
+      "question": "Razvrstite godala po velikosti, od najmanjšega do največjega:",
+      "answers": {
+        "A": "viola",
+        "B": "violina",
+        "C": "kontrabas",
+        "D": "violončelo"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s01e39_frames/s01e39_ff_options.jpg",
+      "resultEvidence": "work/s01e39_frames/s01e39_ff_order.jpg",
+      "lineupEvidence": "work/s01e39_frames/s01e39_ff_lineup.jpg"
+    },
+    "s01e40:1": {
+      "question": "Razporedite besede, da dobite znano frazo:",
+      "answers": {
+        "A": "moč",
+        "B": "svojo",
+        "C": "ima",
+        "D": "noč"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s01e40_frames/s01e40_ff1_options.jpg",
+      "resultEvidence": "work/s01e40_frames/s01e40_ff1_order.jpg",
+      "lineupEvidence": "work/s01e40_frames/s01e40_marko_horvat_profile.jpg"
+    },
+    "s01e40:2": {
+      "question": "Razvrstite dolžinske enote od najkrajše do najdaljše:",
+      "answers": {
+        "A": "meter",
+        "B": "kilometer",
+        "C": "milimeter",
+        "D": "centimeter"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e40_frames/s01e40_ff2_options.jpg",
+      "resultEvidence": "work/s01e40_frames/s01e40_ff2_order.jpg",
+      "lineupEvidence": "work/s01e40_frames/s01e40_marko_horvat_profile.jpg"
+    },
+    "s01e40:3": {
+      "question": "Razvrstite ljubljanske ulice po abecednem vrstnem redu:",
+      "answers": {
+        "A": "Parmova ulica",
+        "B": "Fabjanijeva ulica",
+        "C": "Malova ulica",
+        "D": "Čopova ulica"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s01e40_frames/s01e40_ff3_options.jpg",
+      "resultEvidence": "work/s01e40_frames/s01e40_ff3_order.jpg",
+      "lineupEvidence": "work/s01e40_frames/s01e40_marko_horvat_profile.jpg"
+    },
+    "s01e40:4": {
+      "question": "Po abecednem vrstnem redu razvrstite naslednja indijanska plemena:",
+      "answers": {
+        "A": "Mapuči",
+        "B": "Irokezi",
+        "C": "Delavari",
+        "D": "Kečuji"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s01e40_frames/s01e40_ff4_options.jpg",
+      "resultEvidence": "work/s01e40_frames/s01e40_ff4_order.jpg",
+      "lineupEvidence": "work/s01e40_frames/s01e40_marko_horvat_profile.jpg"
+    },
+    "s01e41:1": {
+      "question": "Razvrstite angleške pevce od najmlajšega do najstarejšega:",
+      "answers": {
+        "A": "David Bowie",
+        "B": "Ed Sheeran",
+        "C": "John Lennon",
+        "D": "Robbie Williams"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e41_frames/s01e41_ff1_order.jpg",
+      "resultEvidence": "work/s01e41_frames/s01e41_ff1_order.jpg",
+      "lineupEvidence": "work/s01e41_frames/s01e41_ff1_order.jpg"
+    },
+    "s01e41:2": {
+      "question": "Smiselno razvrstite besede v slovenskem pregovoru:",
+      "answers": {
+        "A": "resnice",
+        "B": "veliko",
+        "C": "govorice",
+        "D": "malo"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s01e41_frames/s01e41_ff2_order.jpg",
+      "resultEvidence": "work/s01e41_frames/s01e41_ff2_order.jpg",
+      "lineupEvidence": "work/s01e41_frames/s01e41_ff2_order.jpg"
+    },
+    "s01e42:1": {
+      "question": "Razvrstite slovenske pesnike od najstarejšega do najmlajšega:",
+      "answers": {
+        "A": "Tone Pavček",
+        "B": "Srečko Kosovel",
+        "C": "France Prešeren",
+        "D": "Tomaž Šalamun"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e42_frames/s01e42_ff1_order.jpg",
+      "resultEvidence": "work/s01e42_frames/s01e42_ff1_order.jpg",
+      "lineupEvidence": "work/s01e42_frames/s01e42_ff1_lineup.jpg"
+    },
+    "s01e43:1": {
+      "question": "Smiselno razvrstite del slovenskega pregovora:",
+      "answers": {
+        "A": "pogača",
+        "B": "do",
+        "C": "zrna",
+        "D": "zrno"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s01e43_frames/s01e43_ff_order.jpg",
+      "resultEvidence": "work/s01e43_frames/s01e43_ff_order.jpg",
+      "lineupEvidence": "work/s01e43_frames/s01e43_ff_lineup.jpg"
+    },
+    "s01e44:1": {
+      "question": "Razvrstite besede, da dobite naslov skladbe skupine Čuki:",
+      "answers": {
+        "A": "bela",
+        "B": "Na",
+        "C": "solza",
+        "D": "licu"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e44_frames/s01e44_ff1_order.jpg",
+      "resultEvidence": "work/s01e44_frames/s01e44_ff1_order.jpg",
+      "lineupEvidence": "work/s01e44_frames/s01e44_ff1_lineup.jpg"
+    },
+    "s01e44:2": {
+      "question": "Kako si sledijo deli telesa od pet proti glavi?",
+      "answers": {
+        "A": "koleno",
+        "B": "kolk",
+        "C": "gleženj",
+        "D": "komolec"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s01e44_frames/s01e44_ff2_order.jpg",
+      "resultEvidence": "work/s01e44_frames/s01e44_ff2_order.jpg",
+      "lineupEvidence": "work/s01e44_frames/s01e44_ff2_lineup.jpg"
+    },
+    "s01e45:1": {
+      "question": "Razvrstite gore od najvišje do najnižje:",
+      "answers": {
+        "A": "Mount Everest",
+        "B": "Kilimandžaro",
+        "C": "Mont Blanc",
+        "D": "Triglav"
+      },
+      "correctOrder": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "boardEvidence": "work/s01e45_frames/s01e45_ff1_order.jpg",
+      "resultEvidence": "work/s01e45_frames/s01e45_ff1_order.jpg",
+      "lineupEvidence": "work/s01e45_frames/s01e45_ff1_lineup.jpg"
+    },
+    "s01e45:2": {
+      "question": "Razvrstite sklone po vrstnem redu:",
+      "answers": {
+        "A": "mestnik",
+        "B": "orodnik",
+        "C": "tožilnik",
+        "D": "dajalnik"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e45_frames/s01e45_ff2_order.jpg",
+      "resultEvidence": "work/s01e45_frames/s01e45_ff2_order.jpg",
+      "lineupEvidence": "work/s01e45_frames/s01e45_ff2_lineup.jpg"
+    },
+    "s01e46:1": {
+      "question": "Razvrstite slovenska mesta od vzhoda proti zahodu.",
+      "answers": {
+        "A": "Kranj",
+        "B": "Velenje",
+        "C": "Murska Sobota",
+        "D": "Nova Gorica"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e46_frames/s01e46_ff1_order.jpg",
+      "resultEvidence": "work/s01e46_frames/s01e46_ff1_lineup.jpg",
+      "lineupEvidence": "work/s01e46_frames/s01e46_ff1_lineup.jpg"
+    },
+    "s01e46:2": {
+      "question": "Razvrstite slovenske igralce po starosti od najmlajšega do najstarejšega.",
+      "answers": {
+        "A": "Igor Samobor",
+        "B": "Boris Cavazza",
+        "C": "Ivo Ban",
+        "D": "Sebastijan Cavazza"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s01e46_frames/s01e46_ff2_order.jpg",
+      "resultEvidence": "work/s01e46_frames/s01e46_ff2_lineup.jpg",
+      "lineupEvidence": "work/s01e46_frames/s01e46_ff2_lineup.jpg"
+    },
+    "s01e46:3": {
+      "question": "Razvrstite države po površini od najmanjše do največje.",
+      "answers": {
+        "A": "Argentina",
+        "B": "Nigerija",
+        "C": "Japonska",
+        "D": "Rusija"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e46_frames/s01e46_ff3_order.jpg",
+      "resultEvidence": "work/s01e46_frames/s01e46_ff3_lineup.jpg",
+      "lineupEvidence": "work/s01e46_frames/s01e46_ff3_lineup.jpg"
+    },
+    "s01e47:1": {
+      "question": "Razvrstite arhitekturne znamenitosti od vzhoda proti zahodu:",
+      "answers": {
+        "A": "Kitajski zid",
+        "B": "Kip svobode",
+        "C": "Kolosej v Rimu",
+        "D": "Big Ben"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s01e47_frames/s01e47_ff1_order.jpg",
+      "resultEvidence": "work/s01e47_frames/s01e47_ff1_lineup.jpg",
+      "lineupEvidence": "work/s01e47_frames/s01e47_ff1_lineup.jpg"
+    },
+    "s01e47:2": {
+      "question": "Razvrstite ameriške igralke od najstarejše do najmlajše:",
+      "answers": {
+        "A": "Jodie Foster",
+        "B": "Greta Garbo",
+        "C": "Scarlett Johansson",
+        "D": "Whoopi Goldberg"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e47_frames/s01e47_ff2_order.jpg",
+      "resultEvidence": "work/s01e47_frames/s01e47_ff2_lineup.jpg",
+      "lineupEvidence": "work/s01e47_frames/s01e47_ff2_lineup.jpg"
+    },
+    "s01e47:3": {
+      "question": "Razporedite avstrijska mesta po številu prebivalcev, od tistega z največ prebivalci do tistega z najmanj prebivalci:",
+      "answers": {
+        "A": "Salzburg",
+        "B": "Beljak",
+        "C": "Dunaj",
+        "D": "Gradec"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s01e47_frames/s01e47_ff3_order.jpg",
+      "resultEvidence": "work/s01e47_frames/s01e47_ff3_lineup.jpg",
+      "lineupEvidence": "work/s01e47_frames/s01e47_ff3_lineup.jpg"
+    },
+    "s01e48:1": {
+      "question": "Razvrstite slovenske igralke od najstarejše do najmlajše:",
+      "answers": {
+        "A": "Katarina Čas",
+        "B": "Polona Juh",
+        "C": "Mojca Fatur",
+        "D": "Milena Zupančič"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s01e48_frames/s01e48_ff1_order.jpg",
+      "resultEvidence": "work/s01e48_frames/s01e48_ff1_lineup.jpg",
+      "lineupEvidence": "work/s01e48_frames/s01e48_ff1_lineup.jpg"
+    },
+    "s01e49:1": {
+      "question": "Smiselno razvrstite besede slovenskega pregovora:",
+      "answers": {
+        "A": "štal'ca",
+        "B": "potem",
+        "C": "najprej",
+        "D": "krav'ca"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s01e49_frames/s01e49_ff1_order.jpg",
+      "resultEvidence": "work/s01e49_frames/s01e49_ff1_lineup.jpg",
+      "lineupEvidence": "work/s01e49_frames/s01e49_ff1_lineup.jpg"
+    },
+    "s01e49:2": {
+      "question": "Razporedite zgradbe po velikosti, od najnižje do najvišje:",
+      "answers": {
+        "A": "Empire State Building",
+        "B": "Ljubljanski nebotičnik",
+        "C": "Eifflov stolp",
+        "D": "Burj Khalifa"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e49_frames/s01e49_ff2_order.jpg",
+      "resultEvidence": "work/s01e49_frames/s01e49_ff2_lineup.jpg",
+      "lineupEvidence": "work/s01e49_frames/s01e49_ff2_lineup.jpg"
+    },
+    "s01e50:1": {
+      "question": "Razvrstite slovenske košarkarje po starosti, od najstarejšega do najmlajšega:",
+      "answers": {
+        "A": "Zoran Dragić",
+        "B": "Jure Zdovc",
+        "C": "Peter Vilfan",
+        "D": "Luka Dončić"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s01e50_frames/s01e50_ff1_order.jpg",
+      "resultEvidence": "work/s01e50_frames/s01e50_ff1_order.jpg",
+      "lineupEvidence": "work/s01e50_frames/s01e50_ff1_lineup.jpg"
+    },
+    "s01e50:2": {
+      "question": "Razvrstite slovenske gradove po abecedi:",
+      "answers": {
+        "A": "Turjak",
+        "B": "Snežnik",
+        "C": "Strmol",
+        "D": "Hrastovec"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s01e50_frames/s01e50_ff2_order.jpg",
+      "resultEvidence": "work/s01e50_frames/s01e50_ff2_order.jpg",
+      "lineupEvidence": "work/s01e50_frames/s01e50_ff2_lineup.jpg"
+    },
+    "s02e01:1": {
+      "question": "Smiselno razporedite del besedila v partizanski pesmi:",
+      "answers": {
+        "A": "hruške",
+        "B": "jablane",
+        "C": "zacvetele",
+        "D": "in"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s02e01_frames/s02e01_ff1_options.jpg",
+      "resultEvidence": "work/s02e01_frames/s02e01_ff1_results.jpg",
+      "lineupEvidence": "work/s02e01_frames/s02e01_ff1_results.jpg"
+    },
+    "s02e01:2": {
+      "question": "Razporedite letališča od vzhoda proti zahodu:",
+      "answers": {
+        "A": "Heathrow",
+        "B": "Tokio Haneda",
+        "C": "Charles De Gaulle",
+        "D": "John F. Kennedy"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e01_frames/s02e01_ff2_options.jpg",
+      "resultEvidence": "work/s02e01_frames/s02e01_ff2_results.jpg",
+      "lineupEvidence": "work/s02e01_frames/s02e01_ff2_results.jpg"
+    },
+    "s02e02:1": {
+      "question": "Razvrstite črke, kot si sledijo v grški abecedi:",
+      "answers": {
+        "A": "beta",
+        "B": "alfa",
+        "C": "delta",
+        "D": "gama"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s02e02_frames/s02e02_ff1_options.jpg",
+      "resultEvidence": "work/s02e02_frames/s02e02_ff1_results.jpg",
+      "lineupEvidence": "work/s02e02_frames/s02e02_ff1_results.jpg"
+    },
+    "s02e02:2": {
+      "question": "Razporedite članice britanske kraljeve družine od najstarejše do najmlajše:",
+      "answers": {
+        "A": "Kate Middleton",
+        "B": "Camilla Parker Bowles",
+        "C": "Princesa Charlotte",
+        "D": "Kraljica Elizabeta II."
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e02_frames/s02e02_ff2_options.jpg",
+      "resultEvidence": "work/s02e02_frames/s02e02_ff2_results.jpg",
+      "lineupEvidence": "work/s02e02_frames/s02e02_ff2_results.jpg"
+    },
+    "s02e03:1": {
+      "question": "Razvrstite hrvaške otoke po velikosti, od najmanjšega do največjega:",
+      "answers": {
+        "A": "Rab",
+        "B": "Ist",
+        "C": "Krk",
+        "D": "Lastovo"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e03_frames/s02e03_ff1_options.jpg",
+      "resultEvidence": "work/s02e03_frames/s02e03_ff1_results.jpg",
+      "lineupEvidence": "work/s02e03_frames/s02e03_ff1_results.jpg"
+    },
+    "s02e03:2": {
+      "question": "Razporedite glasbene zasedbe, od najbolj številčne do najmanj številčne:",
+      "answers": {
+        "A": "duo",
+        "B": "nonet",
+        "C": "sekstet",
+        "D": "oktet"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e03_frames/s02e03_ff2_options.jpg",
+      "resultEvidence": "work/s02e03_frames/s02e03_ff2_results.jpg",
+      "lineupEvidence": "work/s02e03_frames/s02e03_ff2_results.jpg"
+    },
+    "s02e03:3": {
+      "question": "Razvrstite pijače po vsebnosti alkohola, od najmočnejše do najlažje:",
+      "answers": {
+        "A": "šeri",
+        "B": "pivo",
+        "C": "vino",
+        "D": "vodka"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s02e03_frames/s02e03_ff3_options.jpg",
+      "resultEvidence": "work/s02e03_frames/s02e03_ff3_results.jpg",
+      "lineupEvidence": "work/s02e03_frames/s02e03_ff3_results.jpg"
+    },
+    "s02e03:4": {
+      "question": "Razvrstite note glede na dolžino, od najdaljše do najkrajše:",
+      "answers": {
+        "A": "osminka",
+        "B": "celinka",
+        "C": "polovinka",
+        "D": "četrtinka"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s02e03_frames/s02e03_ff4_options.jpg",
+      "resultEvidence": "work/s02e03_frames/s02e03_ff4_results.jpg",
+      "lineupEvidence": "work/s02e03_frames/s02e03_ff4_results.jpg"
+    },
+    "s02e04:1": {
+      "question": "Razvrstite slovenske nogometaše od najmlajšega do najstarejšega:",
+      "answers": {
+        "A": "Brane Oblak",
+        "B": "Jan Oblak",
+        "C": "Zlatko Zahovič",
+        "D": "Milivoje Novakovič"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e04_frames/s02e04_ff1_options.jpg",
+      "resultEvidence": "work/s02e04_frames/s02e04_ff1_order.jpg",
+      "lineupEvidence": "work/s02e04_frames/s02e04_ff1_result.jpg"
+    },
+    "s02e04:2": {
+      "question": "Smiselno razvrstite del besedila v partizanski pesmi:",
+      "answers": {
+        "A": "deklica",
+        "B": "zvezdo",
+        "C": "šivala",
+        "D": "je"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s02e04_frames/s02e04_ff2_options.jpg",
+      "resultEvidence": "work/s02e04_frames/s02e04_ff2_order.jpg",
+      "lineupEvidence": "work/s02e04_frames/s02e04_ff2_result.jpg"
+    },
+    "s02e04:3": {
+      "question": "Razvrstite mesta v hrvaški Istri od severa proti jugu:",
+      "answers": {
+        "A": "Vrsar",
+        "B": "Poreč",
+        "C": "Umag",
+        "D": "Rovinj"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e04_frames/s02e04_ff3_failed_options.jpg",
+      "resultEvidence": "work/s02e04_frames/s02e04_ff3_failed_order.jpg",
+      "lineupEvidence": "work/s02e04_frames/s02e04_ff3_failed_result.jpg"
+    },
+    "s02e04:4": {
+      "question": "Razvrstite vrste opic po velikosti od najmanjše do največje:",
+      "answers": {
+        "A": "gorila",
+        "B": "kapucinka",
+        "C": "šimpanz",
+        "D": "pavijan"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e04_frames/s02e04_ff4_options.jpg",
+      "resultEvidence": "work/s02e04_frames/s02e04_ff4_order.jpg",
+      "lineupEvidence": "work/s02e04_frames/s02e04_ff4_result.jpg"
+    },
+    "s02e05:1": {
+      "question": "Razvrstite besede, da dobite naslov slovenskega filma:",
+      "answers": {
+        "A": "svoje",
+        "B": "mi",
+        "C": "Gremo",
+        "D": "po"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s02e05_frames/s02e05_ff1_prompt.jpg",
+      "resultEvidence": "work/s02e05_frames/s02e05_ff1_order.jpg",
+      "lineupEvidence": "work/s02e05_frames/s02e05_ff1_result.jpg"
+    },
+    "s02e05:2": {
+      "question": "Razporedite slovenske pevke od najmlajše do najstarejše:",
+      "answers": {
+        "A": "Majda Sepe",
+        "B": "Raiven",
+        "C": "Neca Falk",
+        "D": "Marta Zore"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e05_frames/s02e05_ff2_prompt.jpg",
+      "resultEvidence": "work/s02e05_frames/s02e05_ff2_order.jpg",
+      "lineupEvidence": "work/s02e05_frames/s02e05_ff2_result.jpg"
+    },
+    "s02e05:3": {
+      "question": "Razvrstite jezike, glede na število govorcev, od največ do najmanj:",
+      "answers": {
+        "A": "italijanščina",
+        "B": "portugalščina",
+        "C": "španščina",
+        "D": "slovenščina"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e05_frames/s02e05_ff3_prompt.jpg",
+      "resultEvidence": "work/s02e05_frames/s02e05_ff3_order.jpg",
+      "lineupEvidence": "work/s02e05_frames/s02e05_ff3_result.jpg"
+    },
+    "s02e06:1": {
+      "question": "Razvrstite hrvaške predsednike po vladanju, od tistega, ki je vladal najprej:",
+      "answers": {
+        "A": "Ivo Josipović",
+        "B": "Franjo Tuđman",
+        "C": "Kolinda Grabar Kitarović",
+        "D": "Stjepan Mesić"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e06_frames/s02e06_darija_ff_prompt.jpg",
+      "resultEvidence": "work/s02e06_frames/s02e06_darija_ff_order.jpg",
+      "lineupEvidence": "work/s02e06_frames/s02e06_darija_ff_result.jpg"
+    },
+    "s02e06:2": {
+      "question": "Razporedite po abecedi slovenske punk skupine:",
+      "answers": {
+        "A": "Kuzle",
+        "B": "Buldogi",
+        "C": "Carina",
+        "D": "Otroci socializma"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e06_frames/s02e06_aljaz_ff_prompt.jpg",
+      "resultEvidence": "work/s02e06_frames/s02e06_aljaz_ff_order.jpg",
+      "lineupEvidence": "work/s02e06_frames/s02e06_aljaz_ff_result.jpg"
+    },
+    "s02e07:1": {
+      "question": "Razvrstite živali od najtežje do najlažje:",
+      "answers": {
+        "A": "sinji kit",
+        "B": "ovca",
+        "C": "slon",
+        "D": "uš"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s02e07_frames/s02e07_nino_ff_options.jpg",
+      "resultEvidence": "work/s02e07_frames/s02e07_nino_ff_order_full.jpg",
+      "lineupEvidence": "work/s02e07_frames/s02e07_nino_ff_winner2.jpg"
+    },
+    "s02e07:2": {
+      "question": "Razvrstite učeče se od najmlajšega do najstarejšega:",
+      "answers": {
+        "A": "študent",
+        "B": "učenec",
+        "C": "dijak",
+        "D": "doktorand"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e07_frames/s02e07_janko_ff_options_full.jpg",
+      "resultEvidence": "work/s02e07_frames/s02e07_janko_ff_order_full.jpg",
+      "lineupEvidence": "work/s02e07_frames/s02e07_janko_ff_winner.jpg"
+    },
+    "s02e08:1": {
+      "question": "Smiselno razvrstite naslov taborniške pesmi:",
+      "answers": {
+        "A": "ognju",
+        "B": "tam",
+        "C": "našem",
+        "D": "ob"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e08_frames/s02e08_a_0042.jpg",
+      "resultEvidence": "work/s02e08_frames/s02e08_a_0044.jpg",
+      "lineupEvidence": "work/s02e08_frames/s02e08_a_lineup.jpg"
+    },
+    "s02e08:2": {
+      "question": "Razvrstite vrste orožja od najmanjšega do največjega:",
+      "answers": {
+        "A": "tank",
+        "B": "frača",
+        "C": "puška",
+        "D": "bombnik"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e08_frames/s02e08_darjan_ff_options.jpg",
+      "resultEvidence": "work/s02e08_frames/s02e08_darjan_ff_order.jpg",
+      "lineupEvidence": "work/s02e08_frames/s02e08_darjan_ff_winner.jpg"
+    },
+    "s02e08:3": {
+      "question": "Razvrstite po starosti sorodnike od najmlajšega do najstarejšega:",
+      "answers": {
+        "A": "pradedek",
+        "B": "vnuk",
+        "C": "dedek",
+        "D": "oče"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e08_frames/s02e08_goran_ff_options.jpg",
+      "resultEvidence": "work/s02e08_frames/s02e08_goran_ff_order.jpg",
+      "lineupEvidence": "work/s02e08_frames/s02e08_goran_ff_winner.jpg"
+    },
+    "s02e09:1": {
+      "question": "Razporedite slovenske pevce od najstarejšega do najmlajšega:",
+      "answers": {
+        "A": "Magnifico",
+        "B": "Oto Pestner",
+        "C": "Stane Mancini",
+        "D": "Jan Plestenjak"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+    "boardEvidence": "work/s02e09_frames/s02e09_ales_ff_options.jpg",
+    "resultEvidence": "work/s02e09_frames/s02e09_ales_ff_order.jpg",
+    "lineupEvidence": "work/s02e09_frames/s02e09_ales_ff_lineup.jpg"
+    },
+    "s02e10:1": {
+      "question": "Razvrstite pokrivala po abecedi:",
+      "answers": {
+        "A": "čepica",
+        "B": "baretka",
+        "C": "čelada",
+        "D": "avba"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e10_frames/s02e10_ff_options_full.jpg",
+      "resultEvidence": "work/s02e10_frames/s02e10_ff_order.jpg",
+      "lineupEvidence": "work/s02e10_frames/s02e10_ff_lineup.jpg"
+    },
+    "s02e10:2": {
+      "question": "Razporedite besede v slovenskem pregovoru:",
+      "answers": {
+        "A": "je",
+        "B": "srajca",
+        "C": "železna",
+        "D": "navada"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s02e10_frames/s02e10_ff2_options2.jpg",
+      "resultEvidence": "work/s02e10_frames/s02e10_ff2_order_scan_5_11.jpg",
+      "lineupEvidence": "work/s02e10_frames/s02e10_ff2_win_scan_17.jpg"
+    },
+    "s02e11:1": {
+      "question": "Razvrstite funkcije v Rimokatoliški cerkvi od najmanj do najbolj pomembne:",
+      "answers": {
+        "A": "redovnik",
+        "B": "papež",
+        "C": "škof",
+        "D": "kardinal"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s02e11_frames/s02e11_ff1_options.jpg",
+      "resultEvidence": "work/s02e11_frames/s02e11_ff1_order2.jpg",
+      "lineupEvidence": "work/s02e11_frames/s02e11_ff1_result.jpg"
+    },
+    "s02e11:2": {
+      "question": "Razporedite pisne podlage po nastanku od najstarejše do najmlajše:",
+      "answers": {
+        "A": "papir",
+        "B": "papirus",
+        "C": "pergament",
+        "D": "glinene tablice"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e11_frames/s02e11_kaya_ff_options.jpg",
+      "resultEvidence": "work/s02e11_frames/s02e11_kaya_ff_order.jpg",
+      "lineupEvidence": "work/s02e11_frames/s02e11_kaya_ff_winner.jpg"
+    },
+    "s02e11:3": {
+      "question": "Razvrstite vrste nožev po abecedi:",
+      "answers": {
+        "A": "lovski",
+        "B": "švicarski",
+        "C": "brivski",
+        "D": "rezbarski"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s02e11_frames/s02e11_indira_ff_options.jpg",
+      "resultEvidence": "work/s02e11_frames/s02e11_indira_ff_order.jpg",
+      "lineupEvidence": "work/s02e11_frames/s02e11_indira_ff_winner.jpg"
+    },
+    "s02e12:1": {
+      "question": "Razvrstite geometrijske like glede na število kotov, začenši s tistim, ki jih ima največ:",
+      "answers": {
+        "A": "trikotnik",
+        "B": "kvadrat",
+        "C": "heksagon",
+        "D": "pentagon"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s02e12_frames/s02e12_primoz_ff_options.jpg",
+      "resultEvidence": "work/s02e12_frames/s02e12_primoz_ff_order.jpg",
+      "lineupEvidence": "work/s02e12_frames/s02e12_primoz_ff_winner.jpg"
+    },
+    "s02e12:2": {
+      "question": "Razvrstite slovenske dramatike od najstarejšega do najmlajšega:",
+      "answers": {
+        "A": "Ivan Cankar",
+        "B": "Anton Tomaž Linhart",
+        "C": "Tone Partljič",
+        "D": "Slavko Grum"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s02e12_frames/s02e12_klemen_ff_options.jpg",
+      "resultEvidence": "work/s02e12_frames/s02e12_klemen_ff_order.jpg",
+      "lineupEvidence": "work/s02e12_frames/s02e12_klemen_ff_winner.jpg"
+    },
+    "s02e12:3": {
+      "question": "Razvrstite vetrove po abecednem redu:",
+      "answers": {
+        "A": "tramontana",
+        "B": "pasat",
+        "C": "košava",
+        "D": "pampero"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s02e12_frames/s02e12_blaz_ff_options.jpg",
+      "resultEvidence": "work/s02e12_frames/s02e12_blaz_ff_order_full.jpg",
+      "lineupEvidence": "work/s02e12_frames/s02e12_blaz_ff_winner.jpg"
+    },
+    "s02e13:1": {
+      "question": "Razporedite družboslovne znanosti po abecednem vrstnem redu:",
+      "answers": {
+        "A": "psihologija",
+        "B": "etnologija",
+        "C": "sociologija",
+        "D": "ekonomija"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e13_frames/s02e13_ivan_ff_0085.jpg",
+      "resultEvidence": "work/s02e13_frames/s02e13_ivan_ff_0097.jpg",
+      "lineupEvidence": "work/s02e13_frames/s02e13_ivan_ff_0103.jpg"
+    },
+    "s02e13:2": {
+      "question": "Smiselno razvrstite naslov pesmi skupine Šank Rock:",
+      "answers": {
+        "A": "mavričnih",
+        "B": "o",
+        "C": "ljudeh",
+        "D": "pravljica"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e13_frames/s02e13_nejc_0021.jpg",
+      "resultEvidence": "work/s02e13_frames/s02e13_nejc_0038.jpg",
+      "lineupEvidence": "work/s02e13_frames/s02e13_nejc_0041.jpg"
+    },
+    "s02e14:1": {
+      "question": "Razvrstite slovenske vrhove po nadmorski višini od najnižjega do najvišjega:",
+      "answers": {
+        "A": "Triglav",
+        "B": "Škrlatica",
+        "C": "Šmarna gora",
+        "D": "Ratitovec"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s02e14_frames/s02e14_open_0190.jpg",
+      "resultEvidence": "work/s02e14_frames/s02e14_open_0207.jpg",
+      "lineupEvidence": "work/s02e14_frames/s02e14_open_0210.jpg"
+    },
+    "s02e14:2": {
+      "question": "Razvrstite predsednike vlade Združenega kraljestva po kronološkem vrstnem redu vladanja:",
+      "answers": {
+        "A": "Tony Blair",
+        "B": "Margaret Thatcher",
+        "C": "David Cameron",
+        "D": "Winston Churchill"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e14_frames/s02e14_robert_ff_options.jpg",
+      "resultEvidence": "work/s02e14_frames/s02e14_robert_0046.jpg",
+      "lineupEvidence": "work/s02e14_frames/s02e14_robert_ff_winner.jpg"
+    },
+    "s02e15:1": {
+      "question": "Razvrstite del besedila Zdravljice:",
+      "answers": {
+        "A": "narodi",
+        "B": "žive",
+        "C": "vsi",
+        "D": "naj"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e15_frames/s02e15_ff_0021.jpg",
+      "resultEvidence": "work/s02e15_frames/s02e15_ff_0044.jpg",
+      "lineupEvidence": "work/s02e15_frames/s02e15_ff_0049.jpg"
+    },
+    "s02e15:2": {
+      "question": "Razvrstite živali od največje do najmanjše:",
+      "answers": {
+        "A": "los",
+        "B": "klop",
+        "C": "slon",
+        "D": "hrošč"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s02e15_frames/s02e15_jure_0109.jpg",
+      "resultEvidence": "work/s02e15_frames/s02e15_jure_0113.jpg",
+      "lineupEvidence": "work/s02e15_frames/s02e15_jure_0113.jpg"
+    },
+    "s02e16:1": {
+      "question": "Razporedite mesta bivše Jugoslavije od severa proti jugu:",
+      "answers": {
+        "A": "Banja Luka",
+        "B": "Cetinje",
+        "C": "Ljubljana",
+        "D": "Skopje"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s02e16_frames/s02e16_pre_0181.jpg",
+      "resultEvidence": "work/s02e16_frames/s02e16_pre_0211.jpg",
+      "lineupEvidence": "work/s02e16_frames/s02e16_pre_0208.jpg"
+    },
+    "s02e16:2": {
+      "question": "Razvrstite športe po številu igralcev v ekipi od najmanjšega do največjega:",
+      "answers": {
+        "A": "košarka",
+        "B": "nogomet",
+        "C": "bob dvosed",
+        "D": "odbojka"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s02e16_frames/s02e16_mid1_0145.jpg",
+      "resultEvidence": "work/s02e16_frames/s02e16_mid1_0175.jpg",
+      "lineupEvidence": "work/s02e16_frames/s02e16_mid1_0172.jpg"
+    },
+    "s02e16:3": {
+      "question": "Razporedite živalska bivališča od največjega do najmanjšega:",
+      "answers": {
+        "A": "lastovičje gnezdo",
+        "B": "polžja hišica",
+        "C": "medvedji brlog",
+        "D": "pasja uta"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s02e16_frames/mid3/s02e16_mid3_0189.jpg",
+      "resultEvidence": "work/s02e16_frames/mid3/s02e16_mid3_0222.jpg",
+      "lineupEvidence": "work/s02e16_frames/mid3/s02e16_mid3_0218.jpg"
+    },
+    "s02e17:1": {
+      "question": "Razvrstite Verdijeve opere po abecednem vrstnem redu:",
+      "answers": {
+        "A": "Nabucco",
+        "B": "Trubadur",
+        "C": "Rigoletto",
+        "D": "Otello"
+      },
+      "correctOrder": [
+        "A",
+        "D",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s02e17_frames/part3/s02e17_part3_0357.jpg",
+      "resultEvidence": "work/s02e17_frames/part3/s02e17_part3_0380.jpg",
+      "lineupEvidence": "work/s02e17_frames/part3/s02e17_part3_0386.jpg"
+    },
+    "s02e17:2": {
+      "question": "Razvrstite vrste pokrival po mehkobi materiala od najmehkejšega da najtršega:",
+      "answers": {
+        "A": "čelada",
+        "B": "volnena kapa",
+        "C": "cilinder",
+        "D": "svilena ruta"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e17_frames/final/s02e17_ff2_options.jpg",
+      "resultEvidence": "work/s02e17_frames/part5/s02e17_part5_0391.jpg",
+      "lineupEvidence": "work/s02e17_frames/part5/s02e17_part5_0389.jpg"
+    },
+    "s02e18:1": {
+      "question": "Razvrstite prejemnike Nobelove nagrade za mir od zadnjega proti prvemu:",
+      "answers": {
+        "A": "Jimmy Carter",
+        "B": "Nelson Mandela",
+        "C": "Mati Tereza",
+        "D": "Evropska unija"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "boardEvidence": "work/s02e18_frames/final/s02e18_ff1_nobel_options.jpg",
+      "resultEvidence": "work/s02e18_frames/final/s02e18_ff1_nobel_no_winner.jpg",
+      "lineupEvidence": "work/s02e18_frames/final/s02e18_ff1_nobel_no_winner.jpg"
+    },
+    "s02e18:2": {
+      "question": "Razvrstite po abecedi znanosti o Zemlji:",
+      "answers": {
+        "A": "geologija",
+        "B": "geografija",
+        "C": "geofizika",
+        "D": "geomorfologija"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e18_frames/final/s02e18_ff2_earth_options.jpg",
+      "resultEvidence": "work/s02e18_frames/final/s02e18_ff2_earth_result.jpg",
+      "lineupEvidence": "work/s02e18_frames/final/s02e18_ff2_earth_order.jpg"
+    },
+    "s02e19:1": {
+      "question": "Razvrstite otoke po velikosti od najmanjšega do največjega:",
+      "answers": {
+        "A": "Irska",
+        "B": "Grenlandija",
+        "C": "Velika Britanija",
+        "D": "Sicilija"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s02e19_frames/final/s02e19_ff1_islands_options.jpg",
+      "resultEvidence": "work/s02e19_frames/final/s02e19_ff1_islands_result.jpg",
+      "lineupEvidence": "work/s02e19_frames/final/s02e19_ff1_islands_lineup.jpg"
+    },
+    "s02e19:2": {
+      "question": "Razvrstite jezike po abecedi:",
+      "answers": {
+        "A": "urdujščina",
+        "B": "tamilščina",
+        "C": "turščina",
+        "D": "bengalščina"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e19_frames/final/s02e19_ff2_languages_options.jpg",
+      "resultEvidence": "work/s02e19_frames/final/s02e19_ff2_languages_result.jpg",
+      "lineupEvidence": "work/s02e19_frames/final/s02e19_ff2_languages_lineup.jpg"
+    },
+    "s02e20:1": {
+      "question": "Razporedite planete po velikosti od najmanjšega do največjega:",
+      "answers": {
+        "A": "Neptun",
+        "B": "Zemlja",
+        "C": "Merkur",
+        "D": "Jupiter"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e20_frames/final/s02e20_ff1_planets_options.jpg",
+      "resultEvidence": "work/s02e20_frames/final/s02e20_ff1_planets_result.jpg",
+      "lineupEvidence": "work/s02e20_frames/final/s02e20_ff1_planets_lineup.jpg"
+    },
+    "s02e20:2": {
+      "question": "Razvrstite kraje po oddaljenosti od Ljubljane, od najbližjega do najbolj oddaljenega:",
+      "answers": {
+        "A": "Trebnje",
+        "B": "Trzin",
+        "C": "Višnja Gora",
+        "D": "Grosuplje"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e20_frames/final/s02e20_ff2_places_options.jpg",
+      "resultEvidence": "work/s02e20_frames/final/s02e20_ff2_places_result.jpg",
+      "lineupEvidence": "work/s02e20_frames/final/s02e20_ff2_places_lineup.jpg"
+    },
+    "s02e20:3": {
+      "question": "Razporedite iglavce po abecedi:",
+      "answers": {
+        "A": "sekvoja",
+        "B": "jelka",
+        "C": "smreka",
+        "D": "macesen"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e20_frames/final/s02e20_ff3_conifers_options.jpg",
+      "resultEvidence": "work/s02e20_frames/final/s02e20_ff3_conifers_lineup.jpg",
+      "lineupEvidence": "work/s02e20_frames/final/s02e20_ff3_conifers_lineup.jpg"
+    },
+    "s02e21:1": {
+      "question": "Razvrstite ustanove po vrstnem redu izobraževanja:",
+      "answers": {
+        "A": "srednja šola",
+        "B": "vrtec",
+        "C": "fakulteta",
+        "D": "osnovna šola"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e21_frames/final/s02e21_ff_education_options.jpg",
+      "resultEvidence": "work/s02e21_frames/final/s02e21_ff_education_result.jpg",
+      "lineupEvidence": "work/s02e21_frames/final/s02e21_ff_education_lineup.jpg"
+    },
+    "s02e22:1": {
+      "question": "Razvrstite godala po velikosti od najmanjšega do največjega:",
+      "answers": {
+        "A": "kontrabas",
+        "B": "viola",
+        "C": "violina",
+        "D": "violončelo"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s02e22_frames/final/s02e22_ff1_godala_options.jpg",
+      "resultEvidence": "work/s02e22_frames/final/s02e22_ff1_godala_order.jpg",
+      "lineupEvidence": "work/s02e22_frames/final/s02e22_ff1_godala_lineup.jpg"
+    },
+    "s02e22:2": {
+      "question": "Razporedite po abecedi sledeče ribe:",
+      "answers": {
+        "A": "ščuka",
+        "B": "sardina",
+        "C": "sardela",
+        "D": "orada"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s02e22_frames/final/s02e22_ff2_ribe_options.jpg",
+      "resultEvidence": "work/s02e22_frames/final/s02e22_ff2_ribe_order.jpg",
+      "lineupEvidence": "work/s02e22_frames/final/s02e22_ff2_ribe_lineup.jpg"
+    },
+    "s02e22:3": {
+      "question": "Razporedite krščanske praznike po tem, kako si sledijo v koledarju:",
+      "answers": {
+        "A": "božič",
+        "B": "velika noč",
+        "C": "Marijino vnebovzetje",
+        "D": "sveti trije kralji"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e22_frames/final/s02e22_ff3_prazniki_options.jpg",
+      "resultEvidence": "work/s02e22_frames/final/s02e22_ff3_prazniki_result.jpg",
+      "lineupEvidence": "work/s02e22_frames/final/s02e22_ff3_prazniki_lineup.jpg"
+    },
+    "s02e23:1": {
+      "question": "Razvrstite po abecednem vrstnem redu slovenske kraje:",
+      "answers": {
+        "A": "Šentrupert",
+        "B": "Šentjur",
+        "C": "Šentjernej",
+        "D": "Šentilj"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s02e23_frames/final/s02e23_ff1_kraji_options.jpg",
+      "resultEvidence": "work/s02e23_frames/final/s02e23_ff1_kraji_result.jpg",
+      "lineupEvidence": "work/s02e23_frames/final/s02e23_ff1_kraji_lineup.jpg"
+    },
+    "s02e23:2": {
+      "question": "Smiselno razvrstite naslednje besede:",
+      "answers": {
+        "A": "podgan",
+        "B": "an",
+        "C": "pet",
+        "D": "ban"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e23_frames/final/s02e23_ff2_besede_options.jpg",
+      "resultEvidence": "work/s02e23_frames/final/s02e23_ff2_besede_result.jpg",
+      "lineupEvidence": "work/s02e23_frames/final/s02e23_ff2_besede_lineup.jpg"
+    },
+    "s02e24:1": {
+      "question": "Razvrstite po abecedi vrste sladic.",
+      "answers": {
+        "A": "čokoladna torta",
+        "B": "karamelni puding",
+        "C": "datljeve kroglice",
+        "D": "turški med"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s02e24_frames/final/s02e24_ff1_sladice_options.jpg",
+      "resultEvidence": "work/s02e24_frames/final/s02e24_ff1_sladice_order.jpg",
+      "lineupEvidence": "work/s02e24_frames/final/s02e24_ff1_sladice_result.jpg"
+    },
+    "s02e24:2": {
+      "question": "Smiselno razporedite del besedila v Internacionali:",
+      "answers": {
+        "A": "krivičnosti",
+        "B": "svet",
+        "C": "ta",
+        "D": "razbijmo"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e24_frames/final/s02e24_ff2_internacionala_options.jpg",
+      "resultEvidence": "work/s02e24_frames/final/s02e24_ff2_internacionala_order.jpg",
+      "lineupEvidence": "work/s02e24_frames/final/s02e24_ff2_internacionala_result.jpg"
+    },
+    "s02e25:1": {
+      "question": "Razporedite šahovske titule od najnižjega do najvišjega:",
+      "answers": {
+        "A": "mednarodni mojster",
+        "B": "prvokategorni",
+        "C": "velemojster",
+        "D": "mojster"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e25_frames/final/s02e25_ff1_chess_options.jpg",
+      "resultEvidence": "work/s02e25_frames/final/s02e25_ff1_chess_order.jpg",
+      "lineupEvidence": "work/s02e25_frames/final/s02e25_ff1_chess_lineup.jpg"
+    },
+    "s02e25:2": {
+      "question": "Razporedite po abecednem redu vrste oljk:",
+      "answers": {
+        "A": "istrska belica",
+        "B": "karbonaca",
+        "C": "buža",
+        "D": "rošinjola"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s02e25_frames/final/s02e25_ff2_olive_options.jpg",
+      "resultEvidence": "work/s02e25_frames/final/s02e25_ff2_olive_order.jpg",
+      "lineupEvidence": "work/s02e25_frames/final/s02e25_ff2_olive_lineup.jpg"
+    },
+    "s02e25:3": {
+      "question": "Razporedite glavna mesta od vzhoda proti zahodu:",
+      "answers": {
+        "A": "Aman",
+        "B": "Dublin",
+        "C": "Canberra",
+        "D": "Ottawa"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s02e25_frames/final/s02e25_ff3_capitals_options.jpg",
+      "resultEvidence": "work/s02e25_frames/final/s02e25_ff3_capitals_order.jpg",
+      "lineupEvidence": "work/s02e25_frames/final/s02e25_ff3_capitals_lineup.jpg"
+    },
+    "s02e31:1": {
+      "question": "Razvrstite svetovne reke od zahoda proti vzhodu:",
+      "answers": {
+        "A": "Amazonka",
+        "B": "Jangce",
+        "C": "Ganges",
+        "D": "Donava"
+      },
+      "correctOrder": [
+        "A",
+        "D",
+        "C",
+        "B"
+      ],
+      "boardEvidence": "work/s02e31_frames/final/s02e31_ff1_prompt_options.jpg",
+      "resultEvidence": "work/s02e31_frames/final/s02e31_ff1_order_board.jpg",
+      "lineupEvidence": "work/s02e31_frames/final/s02e31_ff1_result.jpg"
+    },
+    "s02e31:2": {
+      "question": "Razvrstite po abecedi odlikovanja Rdeče armade:",
+      "answers": {
+        "A": "red zmage",
+        "B": "red rdeče zvezde",
+        "C": "red domovinske vojne",
+        "D": "red slave"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s02e31_frames/final/s02e31_ff2_prompt_options.jpg",
+      "resultEvidence": "work/s02e31_frames/final/s02e31_ff2_order_board.jpg",
+      "lineupEvidence": "work/s02e31_frames/final/s02e31_ff2_result.jpg"
+    },
+    "s02e32:1": {
+      "question": "Razvrstite slovenske evrske kovance z omenjenimi motivi glede na vrednost od najvrednejšega do najmanj vrednega:",
+      "answers": {
+        "A": "sejalec",
+        "B": "Triglav",
+        "C": "knežji kamen",
+        "D": "lipicanca"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e32_frames/final/s02e32_ff1_prompt_options.jpg",
+      "resultEvidence": "work/s02e32_frames/final/s02e32_ff1_result.jpg",
+      "lineupEvidence": "work/s02e32_frames/final/s02e32_ff1_lineup.jpg"
+    },
+    "s02e32:2": {
+      "question": "Tokrat morate razporediti po abecedi vrste orlov:",
+      "answers": {
+        "A": "stepski",
+        "B": "kraljevi",
+        "C": "roparski",
+        "D": "repati"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e32_frames/final/s02e32_ff2_prompt_options.jpg",
+      "resultEvidence": "work/s02e32_frames/final/s02e32_ff2_order_board.jpg",
+      "lineupEvidence": "work/s02e32_frames/final/s02e32_ff2_result.jpg"
+    },
+    "s02e32:3": {
+      "question": "Pazite, razvrstite besede v izštevanki:",
+      "answers": {
+        "A": "Kraš",
+        "B": "Kriš",
+        "C": "Matjaž",
+        "D": "Kralj"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s02e32_frames/final/s02e32_ff3_prompt_options.jpg",
+      "resultEvidence": "work/s02e32_frames/final/s02e32_ff3_order_board.jpg",
+      "lineupEvidence": "work/s02e32_frames/final/s02e32_ff3_result.jpg"
+    },
+    "s02e33:1": {
+      "question": "Razporedite po abecedi tuje jezike:",
+      "answers": {
+        "A": "katalonščina",
+        "B": "čečenščina",
+        "C": "gruzinščina",
+        "D": "tamilščina"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e33_frames/final/s02e33_ff1_prompt_options.jpg",
+      "resultEvidence": "work/s02e33_frames/final/s02e33_ff1_order_board.jpg",
+      "lineupEvidence": "work/s02e33_frames/final/s02e33_ff1_result.jpg"
+    },
+    "s02e33:2": {
+      "question": "Smiselno razvrstite besede v naslovu Kreslinove pesmi:",
+      "answers": {
+        "A": "imel",
+        "B": "bi",
+        "C": "če",
+        "D": "te"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s02e33_frames/final/s02e33_ff2_prompt_options.jpg",
+      "resultEvidence": "work/s02e33_frames/final/s02e33_ff2_order_board.jpg",
+      "lineupEvidence": "work/s02e33_frames/final/s02e33_ff2_result.jpg"
+    },
+    "s02e33:3": {
+      "question": "Razporedite nogometne stadione po abecedi:",
+      "answers": {
+        "A": "Wembley",
+        "B": "Camp Nou",
+        "C": "Allianz Arena",
+        "D": "Anfield"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "B",
+        "A"
+      ],
+      "boardEvidence": "work/s02e33_frames/final/s02e33_ff3_prompt_options.jpg",
+      "resultEvidence": "work/s02e33_frames/final/s02e33_ff3_order_board.jpg",
+      "lineupEvidence": "work/s02e33_frames/final/s02e33_ff3_result.jpg"
+    },
+    "s02e34:1": {
+      "question": "Razporedite kosti v nogi od zgoraj navzdol:",
+      "answers": {
+        "A": "prstnice",
+        "B": "pogačica",
+        "C": "golenica",
+        "D": "stegnenica"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e34_frames/final/s02e34_ff1_prompt_options.jpg",
+      "resultEvidence": "work/s02e34_frames/final/s02e34_ff1_order_board.jpg",
+      "lineupEvidence": "work/s02e34_frames/final/s02e34_ff1_result.jpg"
+    },
+    "s02e34:2": {
+      "question": "Razvrstite vrste žuželk po abecedi:",
+      "answers": {
+        "A": "strigalice",
+        "B": "bogomolke",
+        "C": "ščurki",
+        "D": "kobilice"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e34_frames/final/s02e34_ff2_prompt_options.jpg",
+      "resultEvidence": "work/s02e34_frames/final/s02e34_ff2_order_board.jpg",
+      "lineupEvidence": "work/s02e34_frames/final/s02e34_ff2_result.jpg"
+    },
+    "s02e35:1": {
+      "question": "Razvrstite zadnje štiri francoske predsednike od aktualnega nazaj:",
+      "answers": {
+        "A": "Nicolas Sarkozy",
+        "B": "François Hollande",
+        "C": "Emmanuel Macron",
+        "D": "Jacques Chirac"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e35_frames/final/s02e35_ff1_prompt_options.jpg",
+      "resultEvidence": "work/s02e35_frames/final/s02e35_ff1_order_board.jpg",
+      "lineupEvidence": "work/s02e35_frames/final/s02e35_ff1_result.jpg"
+    },
+    "s02e35:2": {
+      "question": "Razvrstite po abecedi svetovno znane kuharje:",
+      "answers": {
+        "A": "Ramsay",
+        "B": "Blumenthal",
+        "C": "Bourdain",
+        "D": "Oliver"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "boardEvidence": "work/s02e35_frames/final/s02e35_ff2_prompt_options.jpg",
+      "resultEvidence": "work/s02e35_frames/final/s02e35_ff2_order_board.jpg",
+      "lineupEvidence": "work/s02e35_frames/final/s02e35_ff2_result.jpg"
+    },
+    "s02e36:1": {
+      "question": "Razvrstite države po številu prebivalcev od tiste z najmanj do tiste z največ.",
+      "answers": {
+        "A": "Brazilija",
+        "B": "Indija",
+        "C": "Švica",
+        "D": "Madagaskar"
+      },
+      "correctOrder": [
+        "C",
+        "D",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s02e36_frames/final/s02e36_ff1_prompt_options.jpg",
+      "resultEvidence": "work/s02e36_frames/final/s02e36_ff1_order_board.jpg",
+      "lineupEvidence": "work/s02e36_frames/final/s02e36_ff1_result.jpg"
+    },
+    "s02e36:2": {
+      "question": "Razvrstite znamenitosti v Sloveniji od zahoda proti vzhodu.",
+      "answers": {
+        "A": "Robbov vodnjak",
+        "B": "Postojnska jama",
+        "C": "Fontana piv v Žalcu",
+        "D": "Tartinijev trg"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e36_frames/final/s02e36_ff2_prompt_options.jpg",
+      "resultEvidence": "work/s02e36_frames/final/s02e36_ff2_order_board.jpg",
+      "lineupEvidence": "work/s02e36_frames/final/s02e36_ff2_result.jpg"
+    },
+    "s02e37:1": {
+      "question": "Smiselno razporedite naslov pesmi Vlada Kreslina:",
+      "answers": {
+        "A": "cveti",
+        "B": "namesto",
+        "C": "roža",
+        "D": "koga"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e37_frames/final/s02e37_ff1_prompt_options.jpg",
+      "resultEvidence": "work/s02e37_frames/final/s02e37_ff1_order_board.jpg",
+      "lineupEvidence": "work/s02e37_frames/final/s02e37_ff1_result.jpg"
+    },
+    "s02e37:2": {
+      "question": "Razvrstite slovenske reke od najkrajše do najdaljše.",
+      "answers": {
+        "A": "Kolpa",
+        "B": "Sava",
+        "C": "Dravinja",
+        "D": "Paka"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s02e37_frames/final/s02e37_ff2_prompt_options.jpg",
+      "resultEvidence": "work/s02e37_frames/final/s02e37_ff2_order_board.jpg",
+      "lineupEvidence": "work/s02e37_frames/final/s02e37_ff2_result.jpg"
+    },
+    "s02e37:3": {
+      "question": "Razporedite po abecedi slovenske jedi:",
+      "answers": {
+        "A": "idrijski žlikrofi",
+        "B": "potica",
+        "C": "kremna rezina",
+        "D": "matevž"
+      },
+      "correctOrder": [
+        "A",
+        "C",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s02e37_frames/final/s02e37_ff3_prompt_options.jpg",
+      "resultEvidence": "work/s02e37_frames/final/s02e37_ff3_order_board.jpg",
+      "lineupEvidence": "work/s02e37_frames/final/s02e37_ff3_result.jpg"
+    },
+    "s02e38:1": {
+      "question": "Razvrstite pokrajine od severa proti jugu:",
+      "answers": {
+        "A": "Dolenjska",
+        "B": "Slavonija",
+        "C": "Dalmacija",
+        "D": "Koroška"
+      },
+      "correctOrder": [
+        "D",
+        "A",
+        "B",
+        "C"
+      ],
+      "boardEvidence": "work/s02e38_frames/final/s02e38_ff1_prompt_options.jpg",
+      "resultEvidence": "work/s02e38_frames/final/s02e38_ff1_order_board.jpg",
+      "lineupEvidence": "work/s02e38_frames/final/s02e38_ff1_result.jpg"
+    },
+    "s02e38:2": {
+      "question": "Razvrstite slovenske alpske smučarke glede na število uvrstitev na stopničke svetovnega pokala, od najmanj do največ:",
+      "answers": {
+        "A": "Mateja Svet",
+        "B": "Katja Koren",
+        "C": "Tina Maze",
+        "D": "Ilka Štuhec"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e38_frames/final/s02e38_ff2_prompt_options.jpg",
+      "resultEvidence": "work/s02e38_frames/final/s02e38_ff2_order_board.jpg",
+      "lineupEvidence": "work/s02e38_frames/final/s02e38_ff2_result.jpg"
+    },
+    "s02e39:1": {
+      "question": "Slovenske glasbenike razvrstite po starosti, od najstarejšega do najmlajšega:",
+      "answers": {
+        "A": "Jan Plestenjak",
+        "B": "Andrej Šifrer",
+        "C": "Gal Gjurin",
+        "D": "Janez Bončina-Benč"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "boardEvidence": "work/s02e39_frames/final/s02e39_ff1_options.jpg",
+      "resultEvidence": "work/s02e39_frames/final/s02e39_ff1_order.jpg",
+      "lineupEvidence": "work/s02e39_frames/final/s02e39_ff1_result.jpg"
+    },
+    "s02e39:2": {
+      "question": "Razvrstite po abecedi slovenske kampe:",
+      "answers": {
+        "A": "Kamp Šobec",
+        "B": "Glamping Ribno",
+        "C": "Kamp Kolpa",
+        "D": "Kamp Kamne"
+      },
+      "correctOrder": [
+        "B",
+        "D",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e39_frames/final/s02e39_ff2_options.jpg",
+      "resultEvidence": "work/s02e39_frames/final/s02e39_ff2_order.jpg",
+      "lineupEvidence": "work/s02e39_frames/final/s02e39_ff2_result.jpg"
+    },
+    "s02e39:3": {
+      "question": "Razporedite slovenske kraje od zahoda proti vzhodu.",
+      "answers": {
+        "A": "Laško",
+        "B": "Tolmin",
+        "C": "Kamnik",
+        "D": "Beltinci"
+      },
+      "correctOrder": [
+        "B",
+        "C",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e39_frames/final/s02e39_ff3_options.jpg",
+      "resultEvidence": "work/s02e39_frames/final/s02e39_ff3_order.jpg",
+      "lineupEvidence": "work/s02e39_frames/final/s02e39_ff3_result.jpg"
+    },
+    "s02e40:1": {
+      "question": "Smiselno razporedite naslov pesmi skupine Hazard:",
+      "answers": {
+        "A": "trnja",
+        "B": "cvetja",
+        "C": "brez",
+        "D": "ni"
+      },
+      "correctOrder": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ],
+      "boardEvidence": "work/s02e40_frames/final/s02e40_ff1_options.jpg",
+      "resultEvidence": "work/s02e40_frames/final/s02e40_ff1_order.jpg",
+      "lineupEvidence": "work/s02e40_frames/final/s02e40_ff1_result.jpg"
+    },
+    "s02e40:2": {
+      "question": "Razporedite po abecedi Smrkce:",
+      "answers": {
+        "A": "Klada",
+        "B": "Zmrda",
+        "C": "Glavca",
+        "D": "Bistri"
+      },
+      "correctOrder": [
+        "D",
+        "C",
+        "A",
+        "B"
+      ],
+      "boardEvidence": "work/s02e40_frames/final/s02e40_ff2_options.jpg",
+      "resultEvidence": "work/s02e40_frames/final/s02e40_ff2_order.jpg",
+      "lineupEvidence": "work/s02e40_frames/final/s02e40_ff2_result.jpg"
+    },
+    "s02e41:1": {
+      "question": "Razporedite prebivalce morja od največjega do najmanjšega:",
+      "answers": {
+        "A": "orada",
+        "B": "delfin",
+        "C": "sinji kit",
+        "D": "sardela"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e41_frames/final/s02e41_ff1_options.jpg",
+      "resultEvidence": "work/s02e41_frames/final/s02e41_ff1_order.jpg",
+      "lineupEvidence": "work/s02e41_frames/final/s02e41_ff1_result.jpg"
+    },
+    "s02e41:2": {
+      "question": "Smiselno razvrstite besede v Kekčevi pesmi:",
+      "answers": {
+        "A": "pesmi",
+        "B": "vesele",
+        "C": "kdor",
+        "D": "poje"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e41_frames/final/s02e41_ff2_options.jpg",
+      "resultEvidence": "work/s02e41_frames/final/s02e41_ff2_order.jpg",
+      "lineupEvidence": "work/s02e41_frames/final/s02e41_ff2_result.jpg"
+    },
+    "s02e41:3": {
+      "question": "Razporedite po abecedi igralne karte:",
+      "answers": {
+        "A": "križ",
+        "B": "karo",
+        "C": "srce",
+        "D": "pik"
+      },
+      "correctOrder": [
+        "B",
+        "A",
+        "D",
+        "C"
+      ],
+      "boardEvidence": "work/s02e41_frames/final/s02e41_ff3_options.jpg",
+      "resultEvidence": "work/s02e41_frames/final/s02e41_ff3_order.jpg",
+      "lineupEvidence": "work/s02e41_frames/final/s02e41_ff3_result.jpg"
+    },
+    "s02e42:1": {
+      "question": "Razvrstite kemične elemente po abecedi:",
+      "answers": {
+        "A": "arzen",
+        "B": "radij",
+        "C": "argon",
+        "D": "radon"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s02e42_frames/final/s02e42_ff1_options.jpg",
+      "resultEvidence": "work/s02e42_frames/final/s02e42_ff1_order.jpg",
+      "lineupEvidence": "work/s02e42_frames/final/s02e42_ff1_result.jpg"
+    },
+    "s02e42:2": {
+      "question": "Smiselno razvrstite besede v otroški izštevanki:",
+      "answers": {
+        "A": "benci",
+        "B": "na",
+        "C": "enci",
+        "D": "kamenci"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "boardEvidence": "work/s02e42_frames/final/s02e42_ff2_options.jpg",
+      "resultEvidence": "work/s02e42_frames/final/s02e42_ff2_order.jpg",
+      "lineupEvidence": "work/s02e42_frames/final/s02e42_ff2_result.jpg"
+    },
+    "s02e43:1": {
+      "question": "Razporedite slovenske olimpionike, ki so prejeli zlato medaljo od najmlajšega do najstarejšega.",
+      "answers": {
+        "A": "Urška Žolnir",
+        "B": "Leon Štukelj",
+        "C": "Tina Trstenjak",
+        "D": "Rajmond Debevec"
+      },
+      "correctOrder": [
+        "C",
+        "A",
+        "D",
+        "B"
+      ],
+      "boardEvidence": "work/s02e43_frames/final/s02e43_ff1_options.jpg",
+      "resultEvidence": "work/s02e43_frames/final/s02e43_ff1_order.jpg",
+      "lineupEvidence": "work/s02e43_frames/final/s02e43_ff1_result.jpg"
+    },
+    "s02e43:2": {
+      "question": "Smiselno razvrstite naslov Domiceljeve pesmi.",
+      "answers": {
+        "A": "srečen",
+        "B": "bo",
+        "C": "danes",
+        "D": "dan"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e43_frames/final/s02e43_ff2_options.jpg",
+      "resultEvidence": "work/s02e43_frames/final/s02e43_ff2_order.jpg",
+      "lineupEvidence": "work/s02e43_frames/final/s02e43_ff2_result.jpg"
+    },
+    "s02e43:3": {
+      "question": "Razporedite slovenska mesta po številu prebivalcev od tistega z največ do tistega z najmanj.",
+      "answers": {
+        "A": "Velenje",
+        "B": "Maribor",
+        "C": "Ljubljana",
+        "D": "Murska Sobota"
+      },
+      "correctOrder": [
+        "C",
+        "B",
+        "A",
+        "D"
+      ],
+      "boardEvidence": "work/s02e43_frames/final/s02e43_ff3_options.jpg",
+      "resultEvidence": "work/s02e43_frames/final/s02e43_ff3_order.jpg",
+      "lineupEvidence": "work/s02e43_frames/final/s02e43_ff3_result.jpg"
+    }
+  }
+}

@@ -13,10 +13,10 @@ The catalogue currently covers:
 - 10 seasons
 - 474 places in the original episode sequence
 - 473 catalogued episodes and one clearly marked unavailable episode
-- 1,048 complete hot-seat runs
+- 1,049 complete hot-seat runs
 - 9,536 question boards
-- 1,676 contestant and fastest-finger profiles
-- 28,459 unique JPG archive images
+- 1,643 contestant and fastest-finger profiles
+- 28,365 unique JPG archive images
 
 Question records include the question and four options, the correct answer, the contestant’s answer, its position and value, recorded lifelines, the broadcast date and the associated contestant. The archive also records Fastest Finger First contestants and winners, final winnings and runs that continue into later episodes.
 
@@ -76,6 +76,7 @@ Everything needed to build and publish the web catalogue is contained in this fo
 - `work/` contains the JPG archive images referenced by those tables.
 - `src/` contains the bilingual pages, visual design and generated statistical data.
 - `tools/` contains optional maintenance scripts for regenerating the two statistical analyses.
+- The committed analysis results are `src/assets/data/answer-patterns.json` and `src/_data/generated/question-topics.json`; temporary review and feature files under `work/analysis-output/` are not part of the published catalogue.
 - `MISSING_EPISODE_S06E40.md` and `MISSING_EPISODE_S07E21.md` document the two exceptional episode-numbering investigations.
 
 The web build does not depend on files outside this folder.
@@ -87,7 +88,7 @@ The current statistical results are already included with the catalogue, so thes
 - `tools/answer-sequence-analysis/` regenerates the interactive analysis of correct-answer-letter sequences. It is run only when catalogue rows or question/answer content changes, not after image or timestamp corrections.
 - `tools/question-topic-review/` maintains the ranked question-topic preparation guide. GPT reviews the complete Slovenian question and all four options, one catalogue row at a time, and assigns a specific learning topic. The JavaScript utilities only prepare review batches, verify that every row has exactly one valid assignment, and calculate the published totals; they do not classify questions.
 
-Each tool folder contains its own short explanation and regeneration command. Temporary feature tables are written under `work/analysis-output/` and are excluded from the publishable source.
+Each tool folder contains its own short explanation and regeneration command. Temporary feature tables are written under `work/analysis-output/` and are excluded from the publishable source; the published catalogue does not depend on those temporary files.
 
 ## Downloadable data
 

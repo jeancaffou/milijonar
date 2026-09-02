@@ -33,7 +33,7 @@ export default class ContestantPage {
     const hotSeatEvidence = [...new Map(logicalRuns
       .flatMap((run) => run.evidence)
       .map((item) => [item.url, item])).values()];
-    const selectedProfileImage = selectContestantProfileImage(person, catalog.contestantRuns, logicalRuns, catalog.episodeByKey);
+    const selectedProfileImage = selectContestantProfileImage(person, catalog.contestantRuns, logicalRuns, catalog.episodeByKey, catalog.profileAuditByKey);
     const profileImage = selectedProfileImage?.item || null;
     const lineupGallery = lineupEvidence.filter((item) => item.url !== profileImage?.url);
     const hotSeatGallery = hotSeatEvidence.filter((item) => item.url !== profileImage?.url);
